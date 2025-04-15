@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Steffen Rebennack">
+    <meta name="responsible" content="Josef Kallrath">
+    <meta name="description" content="Josef Kallrath's Homepage">
+    <meta name="keywords" content="Josef Kallrath, mathematical business optimization, astronomy, game theory, optimization">
+    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+    <title>Josef Kallrath | Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0 10px;
+            text-align: center;
+        }
+
+        header .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        .content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .content-section {
+            margin-bottom: 20px;
+        }
+
+        .content-section a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .content-section h3 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="https://josefkallrath.github.io/homepage">
+                <img src="images/logo.jpg" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="https://josefkallrath.github.io/homepage">Home</a></li>
+                    <li><a href="https://josefkallrath.github.io/cv">CV</a></li>
+                    <li><a href="https://josefkallrath.github.io/astronomy">Astronomy</a></li>
+                    <li><a href="https://josefkallrath.github.io/mathematics">Mathematics</a></li>
+                    <li><a href="https://josefkallrath.github.io/publications">Publications</a></li>
+                    <li><a href="https://josefkallrath.github.io/links">Links</a></li>
+                    <li><a href="https://josefkallrath.github.io/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Welcome to my Homepage!</h2>
+            <img src="images/kallrath-pic.jpg" alt="Josef Kallrath" class="profile-pic">
+            <p><strong>Prof. Dr. Josef Kallrath</strong></p>
+        </section>
+
+        <section class="content">
+            <div class="content-section">
+            <h2>Research Interests</h2>
+            <h3><a href="https://josefkallrath.github.io/astronomy">Astronomy</a></h3>
+                <ul>
+                    <li><a href="https://josefkallrath.github.io/binary-stars">Binary Stars</a></li>
+                    <li><a href="https://josefkallrath.github.io/eclipsing-binaries">Eclipsing Binaries</a></li>
+                    <li><a href="https://josefkallrath.github.io/celestial-mechanics">Celestial Mechanics</a></li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h3><a href="https://josefkallrath.github.io/mathematics">Mathematics</a></h3>
+                <ul>
+                    <li>Computational Geometry</li>
+                    <li><a href="https://josefkallrath.github.io/history">History of Mathematics</a></li>
+                    <li><a href="https://josefkallrath.github.io/game-theory">Game Theory</a></li>
+                    <li><a href="https://josefkallrath.github.io/mathematical-optimization">Mathematical Optimization</a>
+                        <ul>
+                            <li>Modeling & Solving Real-World Problems</li>
+                            <li>Mixed-Integer Linear & Nonlinear Programming</li>
+                            <li>Global Optimization of Non-Convex Problems</li>
+                            <li>Decomposition Methods & other polylithic Approaches</li>
+                            <li>Computational Geometry & Optimization</li>
+                            <li>Exaxt-number Arithmetic & Large-number Arithmetic</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="content-section">
+                <h2>Current Activities</h2>
+                <ul>
+                    <li>Disks-packing and disks-placement problems within different regions
+                        defined by its perimeters</li>
+                    <li>High-precision and Multi-precision arithmetic and optimization problem
+                        solving</li>
+                    <li>Minimal-perimeter convex hulls of convex and nonconvex polygons</li>
+                    <li>Sample pooling exploiting integer programming problems</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2005 - 2025 Josef Kallrath</p>
+        </div>
+    </footer>
+</body>
+</html>

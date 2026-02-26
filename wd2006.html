@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Josef Kallrath">
+    <meta name="responsible" content="Josef Kallrath">
+    <meta name="description" content="Josef Kallrath's WD2007 – Eclipsing Binary Program">
+    <meta name="keywords" content="WD2007, WD2006, eclipsing binaries, Wilson-Devinney, binary stars">
+    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+    <title>Josef Kallrath | WD2006</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Jost',sans-serif;font-weight:300;background:#F8F8F6;color:#1A1A1A;line-height:1.75;-webkit-font-smoothing:antialiased}
+        .container{width:88%;max-width:1080px;margin:0 auto}
+        header{background:#1C3557;padding:0}
+        .header-inner{display:flex;align-items:center;gap:0}
+        header .logo{width:90px;height:90px;border-radius:50%;border:2px solid rgba(255,255,255,.22);cursor:pointer;transition:border-color .25s;display:block;flex-shrink:0;margin:12px 28px 12px 0}
+        header .logo:hover{border-color:rgba(255,255,255,.5)}
+        nav{flex:1}
+        nav ul{list-style:none;display:flex;flex-wrap:wrap;align-items:center;height:100%}
+        nav ul li a{display:block;color:rgba(255,255,255,.78);text-decoration:none;font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px 16px;position:relative;transition:color .2s}
+        nav ul li a::after{content:'';position:absolute;bottom:0;left:16px;right:16px;height:2px;background:#A8C4E0;transform:scaleX(0);transition:transform .22s ease}
+        nav ul li a:hover{color:#fff}
+        nav ul li a:hover::after{transform:scaleX(1)}
+        main{padding:64px 0 96px}
+        .page-header{margin-bottom:48px}
+        .page-header h1{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;color:#1C3557;margin-bottom:8px}
+        .page-header .breadcrumb{font-size:12px;color:#999;letter-spacing:.08em;text-transform:uppercase}
+        .card{background:#fff;border:1px solid #E6E6E0;border-radius:3px;padding:40px 44px;margin-bottom:20px}
+        .card h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#1C3557;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid #EBEBE6}
+        .card p{font-size:15px;color:#444;margin-bottom:18px;line-height:1.8}
+        .card p:last-child{margin-bottom:0}
+        .card a{color:#1C3557;text-decoration:none;border-bottom:1px solid #D0D8E8;transition:border-color .2s}
+        .card a:hover{border-bottom-color:#1C3557}
+        .download-box{background:#EEF3FA;border:1px solid #C8D9EE;border-radius:3px;padding:24px 32px;margin-top:28px;display:flex;align-items:center;gap:24px}
+        .download-box .dl-icon{font-size:32px;flex-shrink:0;opacity:.6}
+        .download-box .dl-text{font-size:14.5px;color:#333;line-height:1.65}
+        .download-box .dl-text strong{color:#1C3557;font-weight:500;display:block;margin-bottom:4px;font-size:15.5px}
+        .note-box{background:#FFFBF0;border:1px solid #EDE0B0;border-radius:3px;padding:16px 24px;margin-bottom:20px;font-size:14px;color:#5A4800}
+        footer{background:#1C3557;color:rgba(255,255,255,.45);text-align:center;padding:26px 0;font-size:12.5px;letter-spacing:.04em}
+        @media(max-width:640px){.card{padding:28px 24px}.download-box{flex-direction:column;gap:12px}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="https://josefkallrath.github.io"><img src="images/logo.jpg" alt="Logo" class="logo"></a>
+            <nav><ul>
+                <li><a href="https://josefkallrath.github.io">Home</a></li>
+                <li><a href="https://josefkallrath.github.io/cv">CV</a></li>
+                <li><a href="https://josefkallrath.github.io/astronomy">Astronomy</a></li>
+                <li><a href="https://josefkallrath.github.io/mathematics">Mathematics</a></li>
+                <li><a href="https://josefkallrath.github.io/publications">Publications</a></li>
+                <li><a href="https://josefkallrath.github.io/links">Links</a></li>
+                <li><a href="https://josefkallrath.github.io/contact">Contact</a></li>
+            </ul></nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>WD2006</h1>
+                <p class="breadcrumb">Astronomy &middot; Eclipsing Binaries</p>
+            </div>
+
+            <div class="card">
+                <h2>The Eclipsing Binary Program WD2006</h2>
+
+                <p><strong>WD2006</strong> has been developed by Josef Kallrath, and, in those parts related to stellar atmospheres, by Eugene F. Milone; <strong>WD2007</strong> introduced only minor changes over WD2006. There has been little progress after 2007, and WD2006 is not synchronized with the latest version of the Wilson-Devinney code. It is still available on request.</p>
+
+                <p>The program runs under Linux as well as in a DOS window or DOS command shell under Win95, Win98, WinNT, Win2000, and WinXP. It should also run under other UNIX operating systems and CygWin, though this has not been thoroughly tested.</p>
+
+                <p>WD2006 is a Fortran-based wrapper around the <a href="ftp://ftp.astro.ufl.edu/pub/wilson/" target="_blank">Wilson-Devinney program WD (LC+DC)</a> developed and distributed by Robert E. Wilson (University of Florida) to compute eclipsing binary light curves. The term <em>light curves</em> is used here in the general sense of eclipsing binary observables; see Kallrath &amp; Milone (1999) for details. The package is maintained solely by Josef Kallrath. The documentation has been substantially improved and, from 2005 on, is maintained by J. Kallrath and E. F. Milone.</p>
+
+                <p>It should be understood that modeling eclipsing binaries and solving inverse problems in this context is a major research effort and requires expertise to use the software effectively. Great effort has been invested to make the software as stable as possible.</p>
+
+                <p>WD2006 has been developed within the framework of several preceding software packages: LCCTRL, WD93, WD95, WD98, and WD2002. WD2002 was the first release combining all previous developments, including stellar atmosphere improvements by E. F. Milone and C. R. Stagg, and was the first release to run under Linux and other UNIX operating systems.</p>
+
+                <p>WD2006 adds simulated annealing as a minimization algorithm and produces tables of absolute dimensions &ndash; in particular, LaTeX output tables. It also supports a Fortran subroutine for the computation of limb-darkening coefficients as provided by Walter Van Hamme.</p>
+
+                <p>The procedure for creating the flux files is described in the appendix along with changes to the atmospheres option in WD programs. The use of flux ratio files making use of Kurucz atmosphere models is coded in <em>Subroutine ATM2000</em> (which replaces subroutine ATM) by C. R. Stagg.</p>
+
+                <p>The LaTeX source file <code>docu.tex</code> is provided in the WD2006/DOCUMENT directory to encourage new users to add appropriate comments, corrections, or extensions directly. Feedback on problems encountered is very welcome.</p>
+            </div>
+
+            <div class="card">
+                <h2>Available Programs</h2>
+
+                <p>Currently, at least three programs based on the Wilson-Devinney approach are available:</p>
+
+                <p>The <strong>original WD program</strong> by Bob Wilson is the most up-to-date in terms of astrophysics, continuously developed and maintained. Most eclipsing binary analyses are performed with this program.</p>
+
+                <p><strong>WD2006/WD2007</strong> (described on this page) runs fully under both Linux and Microsoft Windows, and has been used in a number of published eclipsing binary analyses.</p>
+
+                <p>The GUI wrapper <strong><a href="http://www.eclipsingbinaries.org/" target="_blank">PHOEBE</a></strong> developed by Andrej Pr&scaron;a is user-friendly with an active user group.</p>
+
+                <p>Which program to choose depends on one's needs and working style preferences.</p>
+
+                <div class="download-box">
+                    <span class="dl-icon">&#8595;</span>
+                    <div class="dl-text">
+                        <strong>Download WD2006</strong>
+                        <a href="files/wd2006.zip">wd2006.zip</a> &ndash; password-protected archive containing the Windows executable, documentation, and test examples (source code not included). Please contact the author to request the password.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer><div class="container"><p>Copyright &copy; 2005&ndash;2026 Josef Kallrath</p></div></footer>
+</body>
+</html>

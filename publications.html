@@ -1,1306 +1,859 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Steffen Rebennack" />
-    <meta name="responsible" content="Josef Kallrath" />
-    <meta name="description" content="Josef Kallrath's Homepage" />
-    <meta name="keywords" content="Josef Kallrath, mathematical business optimization, astronomy, game theory, optimization" />
-    <link rel="icon" type="image/jpg" href="images/logo.jpg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Josef Kallrath">
+    <meta name="responsible" content="Josef Kallrath">
+    <link rel="icon" type="image/jpg" href="images/logo.jpg">
     <title>Josef Kallrath | Publications</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f4;
-                color: #333;
-            }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Jost',sans-serif;font-weight:300;background:#F8F8F6;color:#1A1A1A;line-height:1.75;-webkit-font-smoothing:antialiased}
+        .container{width:88%;max-width:1080px;margin:0 auto}
+        header{background:#1C3557;padding:0}
+        .header-inner{display:flex;align-items:center;gap:0}
+        header .logo{width:90px;height:90px;border-radius:50%;border:2px solid rgba(255,255,255,.22);cursor:pointer;transition:border-color .25s;display:block;flex-shrink:0;margin:12px 28px 12px 0}
+        header .logo:hover{border-color:rgba(255,255,255,.5)}
+        nav{flex:1}
+        nav ul{list-style:none;display:flex;flex-wrap:wrap;align-items:center}
+        nav ul li a{display:block;color:rgba(255,255,255,.78);text-decoration:none;font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px 16px;position:relative;transition:color .2s}
+        nav ul li a::after{content:'';position:absolute;bottom:0;left:16px;right:16px;height:2px;background:#A8C4E0;transform:scaleX(0);transition:transform .22s ease}
+        nav ul li a:hover{color:#fff}
+        nav ul li a:hover::after{transform:scaleX(1)}
+        main{padding:64px 0 96px}
+        .page-header{margin-bottom:48px}
+        .page-header h1{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;color:#1C3557;margin-bottom:8px}
+        .page-header .breadcrumb{font-size:12px;color:#999;letter-spacing:.08em;text-transform:uppercase}
+        .toc-card{background:#fff;border:1px solid #E6E6E0;border-radius:3px;padding:28px 44px;margin-bottom:20px}
+        .toc-card h2{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#1C3557;margin-bottom:16px}
+        .toc-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px}
+        .toc-card ul li a{color:#1C3557;text-decoration:none;font-size:14px;border-bottom:1px solid #D0D8E8;transition:border-color .2s}
+        .toc-card ul li a:hover{border-bottom-color:#1C3557}
+        .section-card{background:#fff;border:1px solid #E6E6E0;border-radius:3px;padding:40px 44px;margin-bottom:20px}
+        .section-card h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#1C3557;margin-bottom:32px;padding-bottom:14px;border-bottom:1px solid #EBEBE6}
+        .pub{display:flex;align-items:flex-start;gap:24px;padding:20px 0;border-bottom:1px solid #F0F0EA}
+        .pub:last-child{border-bottom:none;padding-bottom:0}
+        .pub-year{font-size:12px;font-weight:500;color:#999;letter-spacing:.06em;min-width:40px;padding-top:3px;flex-shrink:0}
+        .pub-body{flex:1;font-size:14.5px;color:#444;line-height:1.65}
+        .pub-body strong{color:#1A1A1A;font-weight:500}
+        .pub-body em{font-style:italic;color:#555}
+        .pub-body a{color:#1C3557;text-decoration:none;border-bottom:1px solid #D0D8E8;transition:border-color .2s}
+        .pub-body a:hover{border-bottom-color:#1C3557}
+        .pub-thumb{flex-shrink:0}
+        .pub-thumb img{width:80px;border-radius:3px;border:1px solid #E0E0DA}
+        .badge{display:inline-block;font-size:10.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:#EEF3FA;color:#1C3557;border-radius:2px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+        footer{background:#1C3557;color:rgba(255,255,255,.45);text-align:center;padding:26px 0;font-size:12.5px;letter-spacing:.04em}
+        @media(max-width:640px){.section-card{padding:28px 20px}.toc-card{padding:24px 20px}.pub{flex-direction:column;gap:10px}.pub-thumb{display:none}}
 
-            .container {
-                width: 80%;
-                max-width: 1200px;
-                margin: auto;
-                overflow: hidden;
-            }
-
-            header {
-                background: #333;
-                color: #fff;
-                padding: 20px 0 10px;
-                text-align: center;
-            }
-
-            header .logo {
-                width: 120px;
-                height: 120px;
-                border-radius: 50%;
-                margin-bottom: 10px;
-                cursor: pointer;
-            }
-
-            nav ul {
-                list-style: none;
-                padding: 0;
-            }
-
-            nav ul li {
-                display: inline;
-                margin: 0 15px;
-            }
-
-            nav ul li a {
-                color: #fff;
-                text-decoration: none;
-                font-size: 18px;
-            }
-
-            .intro {
-                text-align: center;
-            }
-
-            .content {
-                background: #fff;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                margin-top: 20px;
-            }
-
-            .content-section {
-                margin-bottom: 20px;
-            }
-
-            .content-section ul {
-                list-style-type: none;
-                padding-left: 0;
-            }
-
-            .content-section ul li {
-                margin: 5px 0;
-            }
-
-            .content-section a {
-                text-decoration: none;
-                color: #0066cc;
-            }
-
-            .content-section a:hover {
-                text-decoration: underline;
-            }
-
-            .publication {
-                padding: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                border-bottom: 1px solid #ddd;
-            }
-
-            .publication img {
-                max-width: 90px;
-                margin-left: 15px;
-                vertical-align: middle;
-                border-radius: 8px;
-            }
-
-            .publication p {
-                margin: 10px 0;
-                flex: 1;
-            }
-
-            .publication:last-child {
-                border-bottom: none;
-            }
-
-            footer {
-                text-align: center;
-                background: #333;
-                color: #fff;
-                margin-top: 20px;
-            }
     </style>
 </head>
-
 <body>
     <header>
-        <div class="container">
-            <a href="https://josefkallrath.github.io/homepage">
-                <img src="images/logo.jpg" alt="Logo" class="logo" />
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="https://josefkallrath.github.io/homepage">Home</a></li>
-                    <li><a href="https://josefkallrath.github.io/cv">CV</a></li>
-                    <li><a href="https://josefkallrath.github.io/astronomy">Astronomy</a></li>
-                    <li><a href="https://josefkallrath.github.io/mathematics">Mathematics</a></li>
-                    <li><a href="https://josefkallrath.github.io/publications">Publications</a></li>
-                    <li><a href="https://josefkallrath.github.io/links">Links</a></li>
-                    <li><a href="https://josefkallrath.github.io/contact">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="container header-inner">
+            <a href="https://josefkallrath.github.io"><img src="images/logo.jpg" alt="Logo" class="logo"></a>
+            <nav><ul>
+                <li><a href="https://josefkallrath.github.io">Home</a></li>
+                <li><a href="https://josefkallrath.github.io/cv">CV</a></li>
+                <li><a href="https://josefkallrath.github.io/astronomy">Astronomy</a></li>
+                <li><a href="https://josefkallrath.github.io/mathematics">Mathematics</a></li>
+                <li><a href="https://josefkallrath.github.io/publications">Publications</a></li>
+                <li><a href="https://josefkallrath.github.io/links">Links</a></li>
+                <li><a href="https://josefkallrath.github.io/contact">Contact</a></li>
+            </ul></nav>
         </div>
     </header>
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Publications</h1>
+                <p class="breadcrumb">Josef Kallrath</p>
+            </div>
 
-    <main class="container">
-        <section class="intro">
-            <h2>Publications</h2>
-        </section>
-
-        <section class="content">
-            <div class="content-section">
-                <h2>Content</h2>
+            <div class="toc-card">
+                <h2>Contents</h2>
                 <ul>
-                    <li><a href="#Astronomy">Astronomy</a></li>
-                    <li><a href="#Mathematical Physics">Mathematical Physics</a></li>
-                    <li><a href="#Mathematical Optimization">Mathematical Optimization</a></li>
+                    <li><a href="#astronomy">Astronomy</a></li>
+                    <li><a href="#mathematical-physics">Mathematical Physics</a></li>
+                    <li><a href="#mathematical-optimization">Mathematical Optimization</a></li>
                 </ul>
             </div>
-        </section>
 
-        <section class="content">
-            <div class="content-section">
-                <h2 id="Astronomy">Astronomy</h2>
+            <!-- ══════════ ASTRONOMY ══════════ -->
+            <div class="section-card" id="astronomy">
+                <h2>Astronomy</h2>
 
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 2022
-                        <br>
-                        <a href="files/galaxies-10-00017-v2.pdf">Fifty Years of Eclipsing Binary Analysis with the Wilson-Devinney Model</a>
-                        <br>
-                        <i>Galaxies</i> <strong>10(17)</strong>, 1-13
-                        <br>
-                        <a href="https://doi.org/10.3390/galaxies10010017" target="_blank">Available at MDPI</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2022</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/galaxies-10-00017-v2.pdf">Fifty Years of Eclipsing Binary Analysis with the Wilson-Devinney Model</a><br>
+                        <em>Galaxies</em> <strong>10(17)</strong>, 1&ndash;13<br>
+                        <a href="https://doi.org/10.3390/galaxies10010017" target="_blank">Available at MDPI</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Milone, E.F.</strong>: 2009
-                        <br>
-                        <i>Eclipsing Binary Stars: Modeling and Analysis</i>, 2nd Edition, Springer, New York
-                        <br>
-                        <a href="https://www.springer.com/astronomy/astrophysics+and+astroparticles/book/978-1-4419-0698-4" target="_blank">Available at Springer</a>
-                    </p>
-                    <a href="https://www.springer.com/astronomy/astrophysics+and+astroparticles/book/978-1-4419-0698-4" target="_blank"><img src="images/lc-book2.jpg" alt="Book" /></a>
+                <div class="pub">
+                    <span class="pub-year">2009</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Milone, E.F.</strong><br>
+                        <em>Eclipsing Binary Stars: Modeling and Analysis</em>, 2nd Edition, Springer, New York<br>
+                        <a href="https://www.springer.com/astronomy/astrophysics+and+astroparticles/book/978-1-4419-0698-4" target="_blank">Available at Springer</a></div>
+                    <div class="pub-thumb"><a href="https://www.springer.com/astronomy/astrophysics+and+astroparticles/book/978-1-4419-0698-4" target="_blank"><img src="images/lc-book2.jpg" alt="Book cover"></a></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Milone, E. F. and Kallrath, J.</strong>: 2008
-                        <br>
-                        <a href="files/MiKa2008.pdf">Tools of the Trade and the Products they Produce: Modeling of Eclipsing Binary Observables</a><strong> [protected by password]</strong>
-                        <br> in: E. F. Milone, D. A. Leahy and D. W. Hobill (Eds.)
-                        <br>
-                        <i>Short-Period Binary Stars: Observations, Analyses and Results</i>
-                        <br> Astrophysics and Space Science Library, Vol. 352, pp. 191-214, Springer, Dordrecht, The Netherlands
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2008</span>
+                    <div class="pub-body"><strong>Milone, E. F. and Kallrath, J.</strong><br>
+                        <a href="files/MiKa2008.pdf">Tools of the Trade and the Products they Produce: Modeling of Eclipsing Binary Observables</a> <span class="badge">password protected</span><br>
+                        in: E. F. Milone, D. A. Leahy and D. W. Hobill (Eds.)<br>
+                        <em>Short-Period Binary Stars: Observations, Analyses and Results</em><br>
+                        Astrophysics and Space Science Library, Vol. 352, pp. 191&ndash;214, Springer, Dordrecht, The Netherlands</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J., Milone, E. F., Breinhorst, R. A., Wilson, R. E., Schnell, A. and Purgathofer, A.</strong>: 2006
-                        <br>
-                        <a href="files/v781tau.pdf">V781 Tauri: A W Ursae Majoris Binary with Decreasing Period</a>
-                        <br>
-                        <i>Astronomy and Astrophysics</i> <strong>452</strong>, 959-967
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2006</span>
+                    <div class="pub-body"><strong>Kallrath, J., Milone, E. F., Breinhorst, R. A., Wilson, R. E., Schnell, A. and Purgathofer, A.</strong><br>
+                        <a href="files/v781tau.pdf">V781 Tauri: A W Ursae Majoris Binary with Decreasing Period</a><br>
+                        <em>Astronomy and Astrophysics</em> <strong>452</strong>, 959&ndash;967</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Milone, E. F., Munari, U., Marrese, P. M., Williams, M. D., Zwitter, T., Kallrath, J. and Tomov, T.</strong>: 2005
-                        <br>
-                        <a href="files/gaia2005.pdf">Evaluating GAIA performance on eclipsing binaries: IV. Orbits and stellar parameters for SV Cam, BS Dra and HP Dra</a>
-                        <br>
-                        <i>Astronomy and Astrophysics</i> <strong>441</strong>, 605-613
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2005</span>
+                    <div class="pub-body"><strong>Milone, E. F., Munari, U., Marrese, P. M., Williams, M. D., Zwitter, T., Kallrath, J. and Tomov, T.</strong><br>
+                        <a href="files/gaia2005.pdf">Evaluating GAIA performance on eclipsing binaries: IV. Orbits and stellar parameters for SV Cam, BS Dra and HP Dra</a><br>
+                        <em>Astronomy and Astrophysics</em> <strong>441</strong>, 605&ndash;613</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Milone, E. F., Kallrath, J., Stagg, C. R. and Williams, M. D.</strong>: 2004
-                        <br>
-                        <a href="files/rmxac21.pdf">Modeling Eclipsing Binaries in Globular Clusters</a>
-                        <br>
-                        <i>RevMexAA (Serie de Conferencias)</i> <strong>21</strong>, 109-115
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2004</span>
+                    <div class="pub-body"><strong>Milone, E. F., Kallrath, J., Stagg, C. R. and Williams, M. D.</strong><br>
+                        <a href="files/rmxac21.pdf">Modeling Eclipsing Binaries in Globular Clusters</a><br>
+                        <em>RevMexAA (Serie de Conferencias)</em> <strong>21</strong>, 109&ndash;115</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Dvorak, R.</strong>: 2001a
-                        <br> The Phase Space Structure of the General Sitnikov Problem
-                        <br> in: Dvorak, R. and Henrard, J. (Eds.)
-                        <br>
-                        <i>Proceedings of the Fifth Alexander von Humboldt Colloquium in Celestial Mechanics: New Developments in the Dynamics of Planetary Systems</i>, pp. 367-379, Kluwer Academic Publisher, Dordrecht, The Netherlands
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2001</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Dvorak, R.</strong><br>
+                        The Phase Space Structure of the General Sitnikov Problem<br>
+                        in: Dvorak, R. and Henrard, J. (Eds.)<br>
+                        <em>Proceedings of the Fifth Alexander von Humboldt Colloquium in Celestial Mechanics: New Developments in the Dynamics of Planetary Systems</em>, pp. 367&ndash;379, Kluwer Academic Publisher, Dordrecht, The Netherlands</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Munari, U., Tomov, T., Zwitter, T., Milone, E. F., Kallrath, J., Marrese, P. M., Boschi, F., Prsa, A., Tomasella, L. and Moro, D.</strong>: 2001
-                        <br>
-                        <a href="files/gaia2001.pdf">Evaluating GAIA performance on eclipsing binaries: I. Orbits and stellar parameters for V505 Persei, V570 Persei and OO Pegasi</a>
-                        <br>
-                        <i>Astronomy and Astropyhsics</i> <strong>378</strong>, 477-486
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2001</span>
+                    <div class="pub-body"><strong>Munari, U., Tomov, T., Zwitter, T., Milone, E. F., Kallrath, J., Marrese, P. M., Boschi, F., Prsa, A., Tomasella, L. and Moro, D.</strong><br>
+                        <a href="files/gaia2001.pdf">Evaluating GAIA performance on eclipsing binaries: I. Orbits and stellar parameters for V505 Persei, V570 Persei and OO Pegasi</a><br>
+                        <em>Astronomy and Astrophysics</em> <strong>378</strong>, 477&ndash;486</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Strassmeier, K.</strong>: 2000a
-                        <br>
-                        <a href="files/bfaur.pdf">The BF Aurigae system - A close binary at the onset of mass transfer</a>
-                        <br>
-                        <i>Astronomy and Astropyhsics</i> <strong>362</strong>, 673-682
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2000</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Strassmeier, K.</strong><br>
+                        <a href="files/bfaur.pdf">The BF Aurigae system &ndash; A close binary at the onset of mass transfer</a><br>
+                        <em>Astronomy and Astrophysics</em> <strong>362</strong>, 673&ndash;682</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Milone, E. F., Schiller, S. J., Kallrath, J. and Munari, U.</strong>: 2000
-                        <br>
-                        <a href="files/sslac2000.pdf">Analysis of the Currently Noneclipsing Binary SS Lacertae or SS Lacertae's Eclipses</a>
-                        <br>
-                        <i>Astronomical Journal</i> <strong>199</strong>, 1405-1423
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2000</span>
+                    <div class="pub-body"><strong>Milone, E. F., Schiller, S. J., Kallrath, J. and Munari, U.</strong><br>
+                        <a href="files/sslac2000.pdf">Analysis of the Currently Noneclipsing Binary SS Lacertae or SS Lacertae&rsquo;s Eclipses</a><br>
+                        <em>Astronomical Journal</em> <strong>199</strong>, 1405&ndash;1423</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1999a
-                        <br>
-                        <a href="files/oakad99.pdf">Least Squares Methods for Models Including Ordinary and Partial Differential Equations</a>
-                        <br>
-                        <i>Modern Astrometry and Astrodynamics honouring Eichhorn Heinrich</i>, pp 61-75, Austrian Academy of Sciences, Vienna, Austria
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1999</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/oakad99.pdf">Least Squares Methods for Models Including Ordinary and Partial Differential Equations</a><br>
+                        <em>Modern Astrometry and Astrodynamics honouring Eichhorn Heinrich</em>, pp 61&ndash;75, Austrian Academy of Sciences, Vienna, Austria</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Milone, E. F.</strong>: 1999
-                        <br>
-                        <i>Eclipsing Binary Stars: Modeling and Analysis</i>, Springer, New York
-                    </p>
-                    <img src="images/lc-book.jpg" alt="Book" />
+                <div class="pub">
+                    <span class="pub-year">1999</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Milone, E. F.</strong><br>
+                        <em>Eclipsing Binary Stars: Modeling and Analysis</em>, Springer, New York</div>
+                    <div class="pub-thumb"><img src="images/lc-book.jpg" alt="Book cover"></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J., Milone, E. F., Terrell, D. and Young, A. T.</strong>: 1998
-                        <br>
-                        <a href="files/kmty1998.pdf">Recent Improvements to a Version of the Wilson-Devinney Program</a>
-                        <br>
-                        <i>Astrophysical Journal</i> <strong>508</strong>, 308-313
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1998</span>
+                    <div class="pub-body"><strong>Kallrath, J., Milone, E. F., Terrell, D. and Young, A. T.</strong><br>
+                        <a href="files/kmty1998.pdf">Recent Improvements to a Version of the Wilson-Devinney Program</a><br>
+                        <em>Astrophysical Journal</em> <strong>508</strong>, 308&ndash;313</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J., Dvorak, R. and Schlöder, J.</strong>: 1997
-                        <br> Periodic Orbits in the Sitnikov Problem
-                        <br> in: Dvorak, R. and Henrard, J. (Eds.)
-                        <br>
-                        <i>Proceedings of the Fourth Alexander von Humboldt Colloqium in Celestial Mechanics: The Dynamical Behaviour of our Planetary System</i>, pp 415-428, Kluwer Academic Publisher, Dordrecht, The Netherlands
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1997</span>
+                    <div class="pub-body"><strong>Kallrath, J., Dvorak, R. and Schl&ouml;der, J.</strong><br>
+                        Periodic Orbits in the Sitnikov Problem<br>
+                        in: Dvorak, R. and Henrard, J. (Eds.)<br>
+                        <em>Proceedings of the Fourth Alexander von Humboldt Colloqium in Celestial Mechanics: The Dynamical Behaviour of our Planetary System</em>, pp 415&ndash;428, Kluwer Academic Publisher, Dordrecht, The Netherlands</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1996
-                        <br>
-                        <a href="files/ag-paper.pdf">Fields of Activity for Astronomers and Astrophysicists in Industry - Survey and Experience in Chemical Industry</a>
-                        <br> in: Schielicke, R. E. (Ed.)
-                        <br>
-                        <i>Reviews in Modern Astronomy</i>, Vol.9, Astronomische Gesellschaft, Hamburg
-                        <br>
-                        <strong>(REVIEW ARTICLE)</strong>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1996</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/ag-paper.pdf">Fields of Activity for Astronomers and Astrophysicists in Industry &ndash; Survey and Experience in Chemical Industry</a> <span class="badge">review article</span><br>
+                        in: Schielicke, R. E. (Ed.)<br>
+                        <em>Reviews in Modern Astronomy</em>, Vol. 9, Astronomische Gesellschaft, Hamburg</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Nelson, R. H., Milone, E. F., VanLeeuwen, J., Terrell, D., Penfold, J. E. and Kallrath, J.</strong>: 1995a
-                        <br>
-                        <a href="files/v728her.pdf">Observations and Analysis of the Field Contact Binary V728 Herculis</a>
-                        <br>
-                        <i>Astronomical Journal</i> <strong>110(5)</strong>, 2400-2416
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1995</span>
+                    <div class="pub-body"><strong>Nelson, R. H., Milone, E. F., VanLeeuwen, J., Terrell, D., Penfold, J. E. and Kallrath, J.</strong><br>
+                        <a href="files/v728her.pdf">Observations and Analysis of the Field Contact Binary V728 Herculis</a><br>
+                        <em>Astronomical Journal</em> <strong>110(5)</strong>, 2400&ndash;2416</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Milone, E. F., Stagg, C. R., Sugars, B. A., McVean, J. R., Schiller, S. J., Kallrath, J. and Bradstreet, D. H.</strong>: 1995
-                        <br>
-                        <a href="files/h235.pdf">Observations and Analysis of the Contact Binary H235 in the Open Cluster NGC 752</a>
-                        <br>
-                        <i>Astronomical Journal</i> <strong>109(1)</strong>, 359-377
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1995</span>
+                    <div class="pub-body"><strong>Milone, E. F., Stagg, C. R., Sugars, B. A., McVean, J. R., Schiller, S. J., Kallrath, J. and Bradstreet, D. H.</strong><br>
+                        <a href="files/h235.pdf">Observations and Analysis of the Contact Binary H235 in the Open Cluster NGC 752</a><br>
+                        <em>Astronomical Journal</em> <strong>109(1)</strong>, 359&ndash;377</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Dvorak, R., Müller, P. and Kallrath, J.</strong>: 1993
-                        <br>
-                        <a href="files/dmk1993.pdf">Survey of the Dynamics of Main Belt Asteroids</a>
-                        <br>
-                        <i>Astronomy and Astrophysics</i> <strong>274</strong>, 627-641
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1993</span>
+                    <div class="pub-body"><strong>Dvorak, R., M&uuml;ller, P. and Kallrath, J.</strong><br>
+                        <a href="files/dmk1993.pdf">Survey of the Dynamics of Main Belt Asteroids</a><br>
+                        <em>Astronomy and Astrophysics</em> <strong>274</strong>, 627&ndash;641</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Milone, E.F., Stagg, C.R. and Kallrath, J.</strong>: 1992d
-                        <br>
-                        <a href="files/ngc5466i.pdf">The Eclipsing Binaries in NGC 5466 and Implications for Close Binary Evolution</a>
-                        <br>
-                        <i>Evolutionary Processes in Interacting Binary Stars</i>, pp 483-486, IAU, The Netherlands
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1992</span>
+                    <div class="pub-body"><strong>Milone, E.F., Stagg, C.R. and Kallrath, J.</strong><br>
+                        <a href="files/ngc5466i.pdf">The Eclipsing Binaries in NGC 5466 and Implications for Close Binary Evolution</a><br>
+                        <em>Evolutionary Processes in Interacting Binary Stars</em>, pp 483&ndash;486, IAU, The Netherlands</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Milone, E.F., Stagg, C.R., Sugars, B. J.A., McVean, J.R., Schiller, S.J., and Kallrath, J.</strong>: 1992c
-                        <br>
-                        <a href="files/h235iau.pdf">The Contact Binary H235 in the Open Cluster NGC 752</a>
-                        <br>
-                        <i>Evolutionary Processes in Interacting Binary Stars</i>, pp 487-490, IAU, The Netherlands
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1992</span>
+                    <div class="pub-body"><strong>Milone, E.F., Stagg, C.R., Sugars, B. J.A., McVean, J.R., Schiller, S.J., and Kallrath, J.</strong><br>
+                        <a href="files/h235iau.pdf">The Contact Binary H235 in the Open Cluster NGC 752</a><br>
+                        <em>Evolutionary Processes in Interacting Binary Stars</em>, pp 487&ndash;490, IAU, The Netherlands</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1992b
-                        <br> Dynamics of Colliding Binary Stellar Winds: Trajectorial Models
-                        <br>
-                        <i>Celestial Mechanics and Dynamical Astronomy</i> <strong>53</strong>, 37-57
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1992</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        Dynamics of Colliding Binary Stellar Winds: Trajectorial Models<br>
+                        <em>Celestial Mechanics and Dynamical Astronomy</em> <strong>53</strong>, 37&ndash;57</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Kämper, B.-C.</strong>: 1992a
-                        <br>
-                        <a href="files/bfaur92.pdf">Another look at the early-type eclipsing binary BF Aurigae</a>
-                        <br>
-                        <i>Astronomy and Astrophysics</i> <strong>265</strong>, 613-625
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1992</span>
+                    <div class="pub-body"><strong>Kallrath, J. and K&auml;mper, B.-C.</strong><br>
+                        <a href="files/bfaur92.pdf">Another look at the early-type eclipsing binary BF Aurigae</a><br>
+                        <em>Astronomy and Astrophysics</em> <strong>265</strong>, 613&ndash;625</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J., Milone, E.F. and Stagg, C.R.</strong>: 1992
-                        <br>
-                        <a href="files/kms1992b.pdf">Modeling of the Eclipsing Binaries in the Globular Cluster NGC 5466</a>
-                        <br>
-                        <i>Astrophysical Journal</i> <strong>389</strong>, 590-601
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1992</span>
+                    <div class="pub-body"><strong>Kallrath, J., Milone, E.F. and Stagg, C.R.</strong><br>
+                        <a href="files/kms1992b.pdf">Modeling of the Eclipsing Binaries in the Globular Cluster NGC 5466</a><br>
+                        <em>Astrophysical Journal</em> <strong>389</strong>, 590&ndash;601</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1991a
-                        <br>
-                        <a href="files/kall91b.pdf">Numerical hydrodynamics of counter flowing binary stellar winds</a>
-                        <br>
-                        <i>Astronomy and Astrophysics</i> <strong>247</strong>, 434-446
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1991</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/kall91b.pdf">Numerical hydrodynamics of counter flowing binary stellar winds</a><br>
+                        <em>Astronomy and Astrophysics</em> <strong>247</strong>, 434&ndash;446</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1991
-                        <br>
-                        <a href="files/kall91a.pdf">Dynamics of colliding binary stellar winds - pressure equilibrium models</a>
-                        <br>
-                        <i>Monthly Notices Roy. Astron. Soc.</i> <strong>248</strong>, 653-663
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1991</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/kall91a.pdf">Dynamics of colliding binary stellar winds &ndash; pressure equilibrium models</a><br>
+                        <em>Monthly Notices Roy. Astron. Soc.</em> <strong>248</strong>, 653&ndash;663</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Dvorak, R. and Kallrath, J.</strong>: 1990a
-                        <br> Le probl&egrave;me des 2 centres fixes, un mod&egrave;le pour la capture des petits corps
-                        <br> in C.F. D. Benest (ed.), <i>Nouveaux d&eacute;veloppements en plan&eacute;tologie dynamique</i>, pp. 193-195, Nice University, Nice
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1990</span>
+                    <div class="pub-body"><strong>Dvorak, R. and Kallrath, J.</strong><br>
+                        Le probl&egrave;me des 2 centres fixes, un mod&egrave;le pour la capture des petits corps<br>
+                        in C.F. D. Benest (ed.), <em>Nouveaux d&eacute;veloppements en plan&eacute;tologie dynamique</em>, pp. 193&ndash;195, Nice University, Nice</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1990
-                        <br> Numerical study of colliding astrospherical stellar wind flows in binary systems
-                        <br>
-                        <i>Physics of the Outer Heliosphere - Conference Proceedings of the 1st COSPAR Colloquium</i>, pp. 321-325, Pergamon Press, Oxford
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1990</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        Numerical study of colliding astrospherical stellar wind flows in binary systems<br>
+                        <em>Physics of the Outer Heliosphere &ndash; Conference Proceedings of the 1st COSPAR Colloquium</em>, pp. 321&ndash;325, Pergamon Press, Oxford</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Breinhorst, R. A., Kallrath, J. and Kämper, B.-C.</strong>: 1989b
-                        <br>
-                        <a href="files/v836cyg.pdf">Light Curve Analysis and Parameter Study of the EB-type Eclipsing Binary V 836 Cygni</a>
-                        <br>
-                        <i>Monthly Notices Roy. Astron. Soc.</i> <strong>241</strong>, 559-573
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1989</span>
+                    <div class="pub-body"><strong>Breinhorst, R. A., Kallrath, J. and K&auml;mper, B.-C.</strong><br>
+                        <a href="files/v836cyg.pdf">Light Curve Analysis and Parameter Study of the EB-type Eclipsing Binary V 836 Cygni</a><br>
+                        <em>Monthly Notices Roy. Astron. Soc.</em> <strong>241</strong>, 559&ndash;573</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Hagel, J. and Kallrath, J.</strong>: 1989a
-                        <br>
-                        <a href="files/haka1989.pdf">Integration theory for the elliptic restricted three-body problem</a>
-                        <br>
-                        <i>Astronomy and Astrophysics</i> <strong>222</strong>, 344-352
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1989</span>
+                    <div class="pub-body"><strong>Hagel, J. and Kallrath, J.</strong><br>
+                        <a href="files/haka1989.pdf">Integration theory for the elliptic restricted three-body problem</a><br>
+                        <em>Astronomy and Astrophysics</em> <strong>222</strong>, 344&ndash;352</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1989
-                        <br>
-                        <i>Dynamik kollidierender Doppelsternwinde</i>
-                        <br> Dissertation, Rheinische Friedrich-Wilhelms Universität Bonn, Astronomische Institute der Universit&auml;t Bonn
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1989</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <em>Dynamik kollidierender Doppelsternwinde</em><br>
+                        Dissertation, Rheinische Friedrich-Wilhelms Universit&auml;t Bonn, Astronomische Institute der Universit&auml;t Bonn</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1987b
-                        <br>
-                        <i>Analyse von Lichtkurven enger Doppelsterne</i>
-                        <br> Diploma thesis, Rheinische Friedrich-Wilhelms Universität Bonn, Sternwarte der Universität Bonn
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1987</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <em>Analyse von Lichtkurven enger Doppelsterne</em><br>
+                        Diploma thesis, Rheinische Friedrich-Wilhelms Universit&auml;t Bonn, Sternwarte der Universit&auml;t Bonn</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Linnell, A.P.</strong>: 1987a
-                        <br>
-                        <a href="files/kali1987.pdf">A New Method to Optimize Parameters in Solutions of Eclipsing Binary Light Curves</a>
-                        <br>
-                        <i>Astrophys. J.</i> <strong>313</strong>, 346-357
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1987</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Linnell, A.P.</strong><br>
+                        <a href="files/kali1987.pdf">A New Method to Optimize Parameters in Solutions of Eclipsing Binary Light Curves</a><br>
+                        <em>Astrophys. J.</em> <strong>313</strong>, 346&ndash;357</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Linnell, A.P. and Kallrath, J.</strong>: 1987
-                        <br>
-                        <a href="files/lika1987.pdf">MR Cygni Revisited</a>
-                        <br>
-                        <i>Astrophys. J.</i> <strong>316</strong>, 754-762
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1987</span>
+                    <div class="pub-body"><strong>Linnell, A.P. and Kallrath, J.</strong><br>
+                        <a href="files/lika1987.pdf">MR Cygni Revisited</a><br>
+                        <em>Astrophys. J.</em> <strong>316</strong>, 754&ndash;762</div>
+                    
                 </div>
             </div>
-        </section>
 
-        <section class="content">
-            <div class="content-section">
-                <h2 id="Mathematical Physics">Mathematical Physics</h2>
+            <!-- ══════════ MATHEMATICAL PHYSICS ══════════ -->
+            <div class="section-card" id="mathematical-physics">
+                <h2>Mathematical Physics</h2>
 
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1999a
-                        <br>
-                        <a href="files/oakad99.pdf">Least Squares Methods for Models Including Ordinary and Partial Differential Equations</a>
-                        <br> in: Dvorak, R., Haupt, H. F. and Wodnar, K. (Eds.)
-                        <br>
-                        <i>Modern Astrometry and Astrodynamics honouring Eichhorn Heinrich</i>, pp. 61-75, Austrian Academy of Sciences, Vienna, Austria
-                        <br>
-                        <strong>(REVIEW ARTICLE)</strong>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1999</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/oakad99.pdf">Least Squares Methods for Models Including Ordinary and Partial Differential Equations</a> <span class="badge">review article</span><br>
+                        in: Dvorak, R., Haupt, H. F. and Wodnar, K. (Eds.)<br>
+                        <em>Modern Astrometry and Astrodynamics honouring Eichhorn Heinrich</em>, pp. 61&ndash;75, Austrian Academy of Sciences, Vienna, Austria</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J., Altstädt, V., Schlöder, J.P. and Bock, H.G.</strong>: 1999
-                        <br> Analysis of Crack Fatigue Growth Behaviour in Polymers and their Composites based on Ordinary Differential Equations Parameter Estimation
-                        <br>
-                        <i>Polymer Testing</i> <strong>18</strong>, 11-35
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1999</span>
+                    <div class="pub-body"><strong>Kallrath, J., Alst&auml;dt, V., Schl&ouml;der, J.P. and Bock, H.G.</strong><br>
+                        Analysis of Crack Fatigue Growth Behaviour in Polymers and their Composites based on Ordinary Differential Equations Parameter Estimation<br>
+                        <em>Polymer Testing</em> <strong>18</strong>, 11&ndash;35</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Falle, S. A. E.G., Kallrath, J., Brockm&uuml;ller, B., Schreieck, A., Giddings, J.R., Agar, D. W. and Watzenberger, O.</strong>: 1995a
-                        <br>
-                        <a href="files/chroma95.pdf">The Dynamics of Reverse Flow Chromatographic Reactors with Side Stream</a>
-                        <br>
-                        <i>Chemical Engineering Communication</i> <strong>135</strong>, 185-211
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1995</span>
+                    <div class="pub-body"><strong>Falle, S. A. E.G., Kallrath, J., Brockm&uuml;ller, B., Schreieck, A., Giddings, J.R., Agar, D. W. and Watzenberger, O.</strong><br>
+                        <a href="files/chroma95.pdf">The Dynamics of Reverse Flow Chromatographic Reactors with Side Stream</a><br>
+                        <em>Chemical Engineering Communication</em> <strong>135</strong>, 185&ndash;211</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 1995
-                        <br>
-                        <a href="files/pade.pdf">Rational Function Techniques and Pad&eacute; Approximants</a>
-                        <br> in: Hagel, J. (Ed.)
-                        <br>
-                        <i>Nonlinear Perturbation Methods with Emphasis to Celestial Mechanics</i>, pp. 97-107, Madeira University Press, Madeira, Portugal
-                        <br>
-                        <strong>(REVIEW ARTICLE)</strong>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1995</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/pade.pdf">Rational Function Techniques and Pad&eacute; Approximants</a> <span class="badge">review article</span><br>
+                        in: Hagel, J. (Ed.)<br>
+                        <em>Nonlinear Perturbation Methods with Emphasis to Celestial Mechanics</em>, pp. 97&ndash;107, Madeira University Press, Madeira, Portugal</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J., Schl&ouml;der, J. and Bock, H.G.</strong>: 1993
-                        <br>
-                        <a href="files/ksb1993.pdf">Least Squares Parameter Estimation in Chaotic Differential Equations</a>
-                        <br>
-                        <i>Celestial Mechanics and Dynamical Astronomy</i> <strong>56</strong>, 353-371
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1993</span>
+                    <div class="pub-body"><strong>Kallrath, J., Schl&ouml;der, J. and Bock, H.G.</strong><br>
+                        <a href="files/ksb1993.pdf">Least Squares Parameter Estimation in Chaotic Differential Equations</a><br>
+                        <em>Celestial Mechanics and Dynamical Astronomy</em> <strong>56</strong>, 353&ndash;371</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Neutsch, W.</strong>: 1990
-                        <br> Lattice integration on the 7-sphere
-                        <br>
-                        <i>Journal of Applied and Computational Mathematics</i> <strong>29(1)</strong>, 9-14
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1990</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Neutsch, W.</strong><br>
+                        Lattice integration on the 7-sphere<br>
+                        <em>Journal of Applied and Computational Mathematics</em> <strong>29(1)</strong>, 9&ndash;14</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Neutsch, W.</strong>: 1988
-                        <br>
-                        <a href="files/kane1988.pdf">Area-preserving Poincare Mappings of the Unit Disk</a>
-                        <br>
-                        <i>Celestial Mechanics and Dynamical Astronomy</i> <strong>43</strong>, 185-191
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1988</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Neutsch, W.</strong><br>
+                        <a href="files/kane1988.pdf">Area-preserving Poincar&eacute; Mappings of the Unit Disk</a><br>
+                        <em>Celestial Mechanics and Dynamical Astronomy</em> <strong>43</strong>, 185&ndash;191</div>
+                    
                 </div>
             </div>
-        </section>
 
-        <section class="content">
-            <div class="content-section">
-                <h2 id="Mathematical Optimization">Mathematical Optimization</h2>
+            <!-- ══════════ MATHEMATICAL OPTIMIZATION ══════════ -->
+            <div class="section-card" id="mathematical-optimization">
+                <h2>Mathematical Optimization</h2>
 
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef and Tatiana Romanova and A. Pankratov and Igor Litvinchev and Luis Infante</strong>: 2023
-                        <br>
-                        <a href="files/CH-of-ConvexPolygons.pdf">Packing Convex Polygons in Minimum-Perimeter Convex Hulls</a>
-                        <br>
-                        <i>Journal of Global Optimization</i> <strong>85</strong>, 39-59
-                        <br>
-                        <a href="https://doi.org/10.1007/s10898-022-01194-4" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2023</span>
+                    <div class="pub-body"><strong>Kallrath, Josef and Tatiana Romanova and A. Pankratov and Igor Litvinchev and Luis Infante</strong><br>
+                        <a href="files/CH-of-ConvexPolygons.pdf">Packing Convex Polygons in Minimum-Perimeter Convex Hulls</a><br>
+                        <em>Journal of Global Optimization</em> <strong>85</strong>, 39&ndash;59<br>
+                        <a href="https://doi.org/10.1007/s10898-022-01194-4" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 2021
-                        <br>
-                        <a href="files/BusinessOpt2.pdf"><i>Business Optimization Using Mathematical Programming</i></a>, 2nd Edition, Springer, New York
-                        <br>
-                        <a href="https://link.springer.com/book/10.1007%2F978-3-030-73237-0" target="_blank">Available at Springer</a>
-                    </p>
-                    <a href="https://link.springer.com/book/10.1007%2F978-3-030-73237-0" target="_blank"><img src="images/978-3-030-73237-0.jpg" alt="Book" width="90" /></a>
+                <div class="pub">
+                    <span class="pub-year">2021</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/BusinessOpt2.pdf"><em>Business Optimization Using Mathematical Programming</em></a>, 2nd Edition, Springer, New York<br>
+                        <a href="https://link.springer.com/book/10.1007%2F978-3-030-73237-0" target="_blank">Available at Springer</a></div>
+                    <div class="pub-thumb"><a href="https://link.springer.com/book/10.1007%2F978-3-030-73237-0" target="_blank"><img src="images/978-3-030-73237-0.jpg" alt="Book cover"></a></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef and Joonghyun Ryu and Chanyoung Song and Mokwon Lee and Donguk Kim and Deok-Soo Kim</strong>: 2021
-                        <br>
-                        <a href="files/RyuEA-2019.pdf">Near optimal minimal convex hulls of disks</a>
-                        <br>
-                        <i>Journal of Global Optimization</i> <strong>50</strong>, 551-594
-                        <br>
-                        <a href="https://doi.org/10.1007/s10898-021-01002-5" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2021</span>
+                    <div class="pub-body"><strong>Kallrath, Josef and Joonghyun Ryu and Chanyoung Song and Mokwon Lee and Donguk Kim and Deok-Soo Kim</strong><br>
+                        <a href="files/RyuEA-2019.pdf">Near optimal minimal convex hulls of disks</a><br>
+                        <em>Journal of Global Optimization</em> <strong>50</strong>, 551&ndash;594<br>
+                        <a href="https://doi.org/10.1007/s10898-021-01002-5" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Robert Blackburn and Julius Näumann</strong>: 2021
-                        <br>
-                        <a href="files/HPSC2018-Proc-04-R1.pdf">Grid-enhanced Polylithic Modeling and Solution Approaches for Hard Optimization Problems</a>
-                        <br> in: Hoang Xuan Phu and Nam Dung Hoang (Eds.)
-                        <br>
-                        <i>Proceedings of the 7th International Conference on High Performance Scientific Computing</i> <strong>43</strong>, 83-96, Springer, New York
-                        <br>
-                        <a href="https://doi.org/10.1007/978-3-030-55240-4_4" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2021</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Robert Blackburn and Julius N&auml;umann</strong><br>
+                        <a href="files/HPSC2018-Proc-04-R1.pdf">Grid-enhanced Polylithic Modeling and Solution Approaches for Hard Optimization Problems</a><br>
+                        in: Hoang Xuan Phu and Nam Dung Hoang (Eds.)<br>
+                        <em>Proceedings of the 7th International Conference on High Performance Scientific Computing</em> <strong>43</strong>, 83&ndash;96, Springer, New York<br>
+                        <a href="https://doi.org/10.1007/978-3-030-55240-4_4" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Ryu, Joonghyun and Mokwon Lee and Donguk Kim and Josef Kallrath and Kokichi Sugihara and Deok-Soo Kim</strong>: 2020a
-                        <br>
-                        <a href="files/RyuEA-2019.pdf">VOROPACK-D: Real-time disk packing algorithm using Voronoi diagram</a>
-                        <br>
-                        <i>Applied Mathematics and Computation</i> <strong>375</strong>, 1-29
-                        <br>
-                        <a href="https://doi.org/10.1016/j.amc.2020.125076" target="_blank">Available at Elsevier</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2020</span>
+                    <div class="pub-body"><strong>Ryu, Joonghyun and Mokwon Lee and Donguk Kim and Josef Kallrath and Kokichi Sugihara and Deok-Soo Kim</strong><br>
+                        <a href="files/RyuEA-2019.pdf">VOROPACK-D: Real-time disk packing algorithm using Voronoi diagram</a><br>
+                        <em>Applied Mathematics and Computation</em> <strong>375</strong>, 1&ndash;29<br>
+                        <a href="https://doi.org/10.1016/j.amc.2020.125076" target="_blank">Available at Elsevier</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Borisovsky, Pavel and Anton Eremeev and Josef Kallrath</strong>: 2020
-                        <br>
-                        <a href="files/BEK-2019.pdf">Multi-product continuous plant scheduling: combination of decomposition, genetic algorithm and constructive heuristic</a>
-                        <br>
-                        <i>International Journal of Production Research</i> <strong>58(9)</strong>, 2677-2695
-                        <br>
-                        <a href="https://doi.org/10.1080/00207543.2019.1630764" target="_blank">Available at Taylor & Francis</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2020</span>
+                    <div class="pub-body"><strong>Borisovsky, Pavel and Anton Eremeev and Josef Kallrath</strong><br>
+                        <a href="files/BEK-2019.pdf">Multi-product continuous plant scheduling: combination of decomposition, genetic algorithm and constructive heuristic</a><br>
+                        <em>International Journal of Production Research</em> <strong>58(9)</strong>, 2677&ndash;2695<br>
+                        <a href="https://doi.org/10.1080/00207543.2019.1630764" target="_blank">Available at Taylor &amp; Francis</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Klosterhalfen, Steffen T. and Josef Kallrath and Markus M. Frey and Anna Schreieck and Robert Blackburn and Jan Buchmann and Felix Weidner</strong>: 2019
-                        <br>
-                        <a href="files/KlosterhalfenEA-2019.pdf">Creating Cost Transparency to Support Strategic Planning in Complex Chemical Value Chains</a>
-                        <br>
-                        <i>European Journal of Operational Research</i> <strong>279</strong>, 605-619
-                        <br>
-                        <a href="https://doi.org/10.1016/j.ejor.2019.05.034" target="_blank">Available at Elsevier</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2019</span>
+                    <div class="pub-body"><strong>Klosterhalfen, Steffen T. and Josef Kallrath and Markus M. Frey and Anna Schreieck and Robert Blackburn and Jan Buchmann and Felix Weidner</strong><br>
+                        <a href="files/KlosterhalfenEA-2019.pdf">Creating Cost Transparency to Support Strategic Planning in Complex Chemical Value Chains</a><br>
+                        <em>European Journal of Operational Research</em> <strong>279</strong>, 605&ndash;619<br>
+                        <a href="https://doi.org/10.1016/j.ejor.2019.05.034" target="_blank">Available at Elsevier</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Frey, M. M.</strong>: 2019 (Published online: Dec 04, 2018)
-                        <br>
-                        <a href="files/KallrathFrey-2019.pdf">Packing Circles into Perimeter-Minimizing Convex Hulls</a>
-                        <br>
-                        <i>Journal of Global Optimization</i> <b>73(4)</b>, 723-759
-                        <br>
-                        <a href="https://link.springer.com/article/10.1007/s10898-018-0724-0" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2019</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Frey, M. M.</strong> (Published online: Dec 04, 2018)<br>
+                        <a href="files/KallrathFrey-2019.pdf">Packing Circles into Perimeter-Minimizing Convex Hulls</a><br>
+                        <em>Journal of Global Optimization</em> <strong>73(4)</strong>, 723&ndash;759<br>
+                        <a href="https://link.springer.com/article/10.1007/s10898-018-0724-0" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef and Frey, Markus M.</strong>: 2018
-                        <br>
-                        <a href="files/KallrathFrey-2018.pdf">Minimal Surface Convex Hulls of Spheres</a>
-                        <br>
-                        <i>Vietnam Journal of Mathematics</i> <b>46</b>
-                        <br>
-                        <a href="https://link.springer.com/article/10.1007/s10013-018-0317-8" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2018</span>
+                    <div class="pub-body"><strong>Kallrath, Josef and Frey, Markus M.</strong><br>
+                        <a href="files/KallrathFrey-2018.pdf">Minimal Surface Convex Hulls of Spheres</a><br>
+                        <em>Vietnam Journal of Mathematics</em> <strong>46</strong><br>
+                        <a href="https://link.springer.com/article/10.1007/s10013-018-0317-8" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef and Steffen T. Klosterhalfen and Josef Kallrath and M. Walter and Gerd Fischer and Robert Blackburn</strong>: 2017
-                        <br>
-                        <a href="files/KlosterhalfenEA-2017.pdf">Payload-based Fleet Optimization for Rail Cars in the Chemical industry Car Fleet Design: Optimization of Structure and Size</a>
-                        <br>
-                        <i>European Journal of Operational Research</i> <b>259</b>, 113-129
-                        <br>
-                        <a href="https://doi.org/10.1016/j.ejor.2016.09.062" target="_blank">Available at Elsevier</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2017</span>
+                    <div class="pub-body"><strong>Kallrath, Josef and Steffen T. Klosterhalfen and Josef Kallrath and M. Walter and Gerd Fischer and Robert Blackburn</strong><br>
+                        <a href="files/KlosterhalfenEA-2017.pdf">Payload-based Fleet Optimization for Rail Cars in the Chemical industry Car Fleet Design: Optimization of Structure and Size</a><br>
+                        <em>European Journal of Operational Research</em> <strong>259</strong>, 113&ndash;129<br>
+                        <a href="https://doi.org/10.1016/j.ejor.2016.09.062" target="_blank">Available at Elsevier</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, Josef</strong>: 2017 (published online: Dec 2015)
-                        <br>
-                        <a href="files/Kallrath2015-ellipsoid.pdf">Packing Ellipsoids into Volume-minimizing Rectangular Boxes</a>
-                        <br>
-                        <i>Journal of Global Optimization</i> <b>67</b>, 1573-2916
-                        <br>
-                        <a href="https://link.springer.com/article/10.1007/s10898-015-0348-6" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2017</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong> (published online: Dec 2015)<br>
+                        <a href="files/Kallrath2015-ellipsoid.pdf">Packing Ellipsoids into Volume-minimizing Rectangular Boxes</a><br>
+                        <em>Journal of Global Optimization</em> <strong>67</strong>, 1573&ndash;2916<br>
+                        <a href="https://link.springer.com/article/10.1007/s10898-015-0348-6" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Rebennack, S. and J. Kallrath</strong>: 2015
-                        <br>
-                        <a href="files/RebKal2014b.pdf">Continuous Piecewise Linear Delta-Approximations for Bivariate und Multivariate Functions</a>
-                        <br>
-                        <i>Journal of Optimization Theory and Applications</i> <b>49</b>, 2463-2480
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2015</span>
+                    <div class="pub-body"><strong>Rebennack, S. and J. Kallrath</strong><br>
+                        <a href="files/RebKal2014b.pdf">Continuous Piecewise Linear Delta-Approximations for Bivariate und Multivariate Functions</a><br>
+                        <em>Journal of Optimization Theory and Applications</em> <strong>49</strong>, 2463&ndash;2480</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Rebennack, S. and J. Kallrath</strong>: 2014d
-                        <br>
-                        <a href="files/RebKal2014a.pdf">Continuous Piecewise Linear Delta-Approximations for MINLP. Problems. I. Minimal Breakpoint Systems for Univariate Functions</a>
-                        <br>
-                        <i>Journal of Optimization Theory and Applications</i>, <strong>167</strong>, 617-643
-                        <br>
-                        <a href="//link.springer.com/article/10.1007/s10957-014-0687-3" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2015</span>
+                    <div class="pub-body"><strong>Blackburn, Robert, Josef Kallrath and Steffen Klosterhalfen</strong> (published online: 24 August 2014)<br>
+                        <a href="files/bkk2014.pdf">Operations Research in BASF&rsquo;s Supply Chain Operations</a><br>
+                        <em>International Transactions in Operational Research</em> <strong>22(3)</strong></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Blackburn, Robert, Josef Kallrath and Steffen Klosterhalfen</strong>: 2015 (published online: 24 August 2014)
-                        <br>
-                        <a href="files/bkk2014.pdf">Operations Research in BASF's Supply Chain Operations</a>
-                        <br>
-                        <i>International Transactions in Operational Research</i> <strong>22(3)</strong>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2014</span>
+                    <div class="pub-body"><strong>Rebennack, S. and J. Kallrath</strong><br>
+                        <a href="files/RebKal2014a.pdf">Continuous Piecewise Linear Delta-Approximations for MINLP Problems. I. Minimal Breakpoint Systems for Univariate Functions</a><br>
+                        <em>Journal of Optimization Theory and Applications</em> <strong>167</strong>, 617&ndash;643<br>
+                        <a href="https://link.springer.com/article/10.1007/s10957-014-0687-3" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Klosterhalfen, Steffen, Josef Kallrath and Gerd Fischer</strong>: 2014b
-                        <br>
-                        <a href="files/kkf2014.pdf">Rail Car Fleet Design: Optimization of Structure and Size</a>
-                        <br>
-                        <i>International Journal of Production Economics</i> <strong>157</strong>, 112-119
-                        <br>
-                        <a href="//doi.org/10.1016/j.ijpe.2013.05.008" target="_blank">Available at Elsevier</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2014</span>
+                    <div class="pub-body"><strong>Klosterhalfen, Steffen, Josef Kallrath and Gerd Fischer</strong><br>
+                        <a href="files/kkf2014.pdf">Rail Car Fleet Design: Optimization of Structure and Size</a><br>
+                        <em>International Journal of Production Economics</em> <strong>157</strong>, 112&ndash;119<br>
+                        <a href="https://doi.org/10.1016/j.ijpe.2013.05.008" target="_blank">Available at Elsevier</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Julia, S. Rebennack, Josef Kallrath and R&uuml;diger Kusche</strong>: 2014a
-                        <br>
-                        <a href="files/krkk2014.pdf">Solving Real-World Cutting Stock-Problems in the Paper Industry: Mathematical Approaches, Experience and Challenges</a>
-                        <br>
-                        <i>European Journal of Operational Research</i> <strong>248</strong>, 374-389
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2014</span>
+                    <div class="pub-body"><strong>Kallrath, Julia, S. Rebennack, Josef Kallrath and R&uuml;diger Kusche</strong><br>
+                        <a href="files/krkk2014.pdf">Solving Real-World Cutting Stock-Problems in the Paper Industry: Mathematical Approaches, Experience and Challenges</a><br>
+                        <em>European Journal of Operational Research</em> <strong>248</strong>, 374&ndash;389</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2014
-                        <br>
-                        <a href="files/KalReb2014_AreaTight.pdf"> Computing Area-Tight Piecewise Linear Overestimators, Underestimators and Tubes for Univariate Functions</a>
-                        <br> in: Themistocles M. Rassias and Christodoulos A. Floudas and Sergiy Butenko (Eds.)
-                        <br>
-                        <i>Optimization in Science and Engineering - In Honor of the 60th Birthday of Panos M. Pardalos</i>, 279-299, Springer, New York
-                        <br>
-                        <a href="http://www.springer.com/mathematics/book/978-0-387-74759-0" target="_blank">Available at Springer</a>
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2014</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/KalReb2014_AreaTight.pdf">Computing Area-Tight Piecewise Linear Overestimators, Underestimators and Tubes for Univariate Functions</a><br>
+                        in: Themistocles M. Rassias and Christodoulos A. Floudas and Sergiy Butenko (Eds.)<br>
+                        <em>Optimization in Science and Engineering &ndash; In Honor of the 60th Birthday of Panos M. Pardalos</em>, 279&ndash;299, Springer, New York<br>
+                        <a href="http://www.springer.com/mathematics/book/978-0-387-74759-0" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2013
-                        <br>
-                        <a href="files/KalReb13_EllipseCutting.pdf">Cutting Ellipses from Area-Minimizing Rectangles</a>
-                        <br>
-                        <i>Journal of Global Optimization</i>, <strong>59(2-3)</strong>, 405-437
-                        <br>
-                        <a href="https://link.springer.com/article/10.1007/s10898-013-0125-3#page-1" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2013</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/KalReb13_EllipseCutting.pdf">Cutting Ellipses from Area-Minimizing Rectangles</a><br>
+                        <em>Journal of Global Optimization</em> <strong>59(2&ndash;3)</strong>, 405&ndash;437<br>
+                        <a href="https://link.springer.com/article/10.1007/s10898-013-0125-3#page-1" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, J.</strong>: 2012
-                        <br>
-                        <i>Gemischt-Ganzzahlige Optimierung: Modellierung in der Praxis</i>, 2nd Edition, Vieweg, Wiesbaden
-                        <br>
-                        <a href="http://link.springer.com/book/10.1007%2F978-3-658-00690-7" target="_blank">Available at Springer</a>
-                    </p>
-                    <a href="http://link.springer.com/book/10.1007%2F978-3-658-00690-7" target="_blank"><img src="images/vieweg2.jpg" alt="Book" border="0" width="90" /></a>
+                <div class="pub">
+                    <span class="pub-year">2012</span>
+                    <div class="pub-body"><strong>Kallrath, J.</strong><br>
+                        <em>Gemischt-Ganzzahlige Optimierung: Modellierung in der Praxis</em>, 2nd Edition, Vieweg, Wiesbaden<br>
+                        <a href="http://link.springer.com/book/10.1007%2F978-3-658-00690-7" target="_blank">Available at Springer</a></div>
+                    <div class="pub-thumb"><a href="http://link.springer.com/book/10.1007%2F978-3-658-00690-7" target="_blank"><img src="images/vieweg2.jpg" alt="Book cover"></a></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, J.</strong>: 2012
-                        <br>
-                        <a href="files/Kallrath_AML_Overview_2012.pdf"> Algebraic Modeling Languages: Introduction and Overview</a>
-                        <br> in: Kallrath, J. (Editor)
-                        <br>
-                        <i>Algebraic Modeling Systems: Modeling and Solving Real World Optimization Problems</i>, 3-10, Springer, New York
-                        <br>
-                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2012</span>
+                    <div class="pub-body"><strong>Kallrath, J.</strong><br>
+                        <a href="files/Kallrath_AML_Overview_2012.pdf">Algebraic Modeling Languages: Introduction and Overview</a><br>
+                        in: Kallrath, J. (Editor)<br>
+                        <em>Algebraic Modeling Systems: Modeling and Solving Real World Optimization Problems</em>, 3&ndash;10, Springer, New York<br>
+                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Britz, W. and J. Kallrath</strong>: 2012
-                        <br>
-                        <a href="files/Britz_Kallrath_2012.pdf"> Economic Simulation Models in Agricultural Economics</a>
-                        <br> in: Kallrath, J. (Editor)
-                        <br>
-                        <i>Algebraic Modeling Systems: Modeling and Solving Real World Optimization Problems</i>, 199-212, Springer, New York
-                        <br>
-                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2012</span>
+                    <div class="pub-body"><strong>Britz, W. and J. Kallrath</strong><br>
+                        <a href="files/Britz_Kallrath_2012.pdf">Economic Simulation Models in Agricultural Economics</a><br>
+                        in: Kallrath, J. (Editor)<br>
+                        <em>Algebraic Modeling Systems: Modeling and Solving Real World Optimization Problems</em>, 199&ndash;212, Springer, New York<br>
+                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, J.</strong>: 2012
-                        <br>
-                        <a href="files/Kallrath_Practioner_2012.pdf"> A Practioner's Wish List Towards Algebraic Modeling Systems</a>
-                        <br> in: Kallrath, J. (Editor)
-                        <br>
-                        <i>Algebraic Modeling Systems: Modeling and Solving Real World Optimization Problems</i>, 212-222, Springer, New York
-                        <br>
-                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank">Available at Springer</a>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2012</span>
+                    <div class="pub-body"><strong>Kallrath, J.</strong><br>
+                        <a href="files/Kallrath_Practioner_2012.pdf">A Practioner&rsquo;s Wish List Towards Algebraic Modeling Systems</a><br>
+                        in: Kallrath, J. (Editor)<br>
+                        <em>Algebraic Modeling Systems: Modeling and Solving Real World Optimization Problems</em>, 212&ndash;222, Springer, New York<br>
+                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, J. (Editor)</strong>: 2012
-                        <br>
-                        <i>Algebraic Modeling Systems: Modeling and Solving Real World Optimization Problems</i>, Springer, Heidelberg
-                        <br>
-                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank">Available at Springer</a>
-                    </p>
-                    <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank"><img src="images/Algebraic_Modeling_Languages.jpg" alt="book" border="0" width="90" /></a>
+                <div class="pub">
+                    <span class="pub-year">2012</span>
+                    <div class="pub-body"><strong>Kallrath, J. (Editor)</strong><br>
+                        <em>Algebraic Modeling Systems: Modeling and Solving Real World Optimization Problems</em>, Springer, Heidelberg<br>
+                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank">Available at Springer</a></div>
+                    <div class="pub-thumb"><a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-642-23591-7" target="_blank"><img src="images/Algebraic_Modeling_Languages.jpg" alt="Book cover"></a></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Jetzke, S. and J. Kallrath</strong>: 2012
-                        <br>
-                        <a href="files/Jetzke_Kallrath_2012.pdf">Optimalit&auml;t ist nicht genug f&uuml;r die Logistik</a>
-                        <br>
-                        <i>OR News</i> <strong>44</strong>, 6-10
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2012</span>
+                    <div class="pub-body"><strong>Jetzke, S. and J. Kallrath</strong><br>
+                        <a href="files/Jetzke_Kallrath_2012.pdf">Optimalit&auml;t ist nicht genug f&uuml;r die Logistik</a><br>
+                        <em>OR News</em> <strong>44</strong>, 6&ndash;10</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2011
-                        <br>
-                        <a href="files/Kallrath2011.pdf">Polylithic Modeling and Solution Approaches Using Algebraic Modeling Systems</a>
-                        <br>
-                        <i>Optimization Letters</i> <strong>5</strong>, 453-466
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2011</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/Kallrath2011.pdf">Polylithic Modeling and Solution Approaches Using Algebraic Modeling Systems</a><br>
+                        <em>Optimization Letters</em> <strong>5</strong>, 453&ndash;466</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Transchel, S. and J. Kallrath and S. Minner and N. L&ouml;hndorf and U. Eberhard</strong>: 2011
-                        <br>
-                        <a href="files/Transchel_Kallrath2011.pdf">A Hybrid General Lot-sizing and Scheduling Formulation for a Production Process with a Two-stage Product Structure.</a>
-                        <br>
-                        <i>International Journal of Production Research</i> <strong>49</strong>, 2463-2480
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2011</span>
+                    <div class="pub-body"><strong>Transchel, S. and J. Kallrath and S. Minner and N. L&ouml;hndorf and U. Eberhard</strong><br>
+                        <a href="files/Transchel_Kallrath2011.pdf">A Hybrid General Lot-sizing and Scheduling Formulation for a Production Process with a Two-stage Product Structure.</a><br>
+                        <em>International Journal of Production Research</em> <strong>49</strong>, 2463&ndash;2480</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Rebennack, S. and J. Kallrath and P. M. Pardalos</strong>: 2010
-                        <br>
-                        <a href="files/rkp2010.pdf"> Energy Portfolio Optimization for Electric Utilities: Case Study for Germany</a>
-                        <br> in: Endre Bjorndal and Mette Bjorndal and Panos M. Pardalos and Mikael R&ouml;nnqvist (Eds.)
-                        <br>
-                        <i>Energy, Natural Resources and Environmental Economics</i>, pp. 221-246, Springer, Heidelberg
-                        <br>
-                        <a href="http://www.springer.com/economics/book/978-3-642-12066-4" target="_blank">Available at Springer</a>
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2010</span>
+                    <div class="pub-body"><strong>Rebennack, S. and J. Kallrath and P. M. Pardalos</strong><br>
+                        <a href="files/rkp2010.pdf">Energy Portfolio Optimization for Electric Utilities: Case Study for Germany</a><br>
+                        in: Endre Bjorndal and Mette Bjorndal and Panos M. Pardalos and Mikael R&ouml;nnqvist (Eds.)<br>
+                        <em>Energy, Natural Resources and Environmental Economics</em>, pp. 221&ndash;246, Springer, Heidelberg<br>
+                        <a href="http://www.springer.com/economics/book/978-3-642-12066-4" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Shaik, M. A. and C. A. Floudas and J. Kallrath and H. J. Pitz</strong>: 2009
-                        <br>
-                        <a href="files/SFKP2009.pdf">Production Scheduling of a Large-Scale Industrial Continuous Plant: Short-Term and Medium-Term Scheduling</a>
-                        <br>
-                        <i>Computers and Chemical Engineering</i> <strong>33</strong>, 670-686
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2009</span>
+                    <div class="pub-body"><strong>Shaik, M. A. and C. A. Floudas and J. Kallrath and H. J. Pitz</strong><br>
+                        <a href="files/SFKP2009.pdf">Production Scheduling of a Large-Scale Industrial Continuous Plant: Short-Term and Medium-Term Scheduling</a><br>
+                        <em>Computers and Chemical Engineering</em> <strong>33</strong>, 670&ndash;686</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, J. and P. M. Pardalos and S. Rebennack and M. Scheidt</strong>: 2009
-                        <br>
-                        <i>Optimization in the Energy Industry</i>, Springer, Berlin, Germany
-                        <br>
-                        <a href="http://www.springer.com/math/book/978-3-540-88964-9" target="_blank">Available at Springer</a>
-                        <br>
-                    </p>
-                    <a href="http://www.springer.com/math/book/978-3-540-88964-9" target="_blank"><img src="images/cover-energy-book.jpg" alt="book" border="0" width="90" /></a>
-                    <br>
+                <div class="pub">
+                    <span class="pub-year">2009</span>
+                    <div class="pub-body"><strong>Kallrath, J. and P. M. Pardalos and S. Rebennack and M. Scheidt</strong><br>
+                        <em>Optimization in the Energy Industry</em>, Springer, Berlin, Germany<br>
+                        <a href="http://www.springer.com/math/book/978-3-540-88964-9" target="_blank">Available at Springer</a></div>
+                    <div class="pub-thumb"><a href="http://www.springer.com/math/book/978-3-540-88964-9" target="_blank"><img src="images/cover-energy-book.jpg" alt="Book cover"></a></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Rebennack, S. and J. Kallrath and P. M. Pardalos</strong>: 2009
-                        <br>
-                        <a href="files/ReKaPa2009a.pdf">Column Enumeration based Decomposition Techniques for a Class of Non-convex MINLP Problems</a>
-                        <br>
-                        <i>Journal of Global Optimization</i> <strong>43</strong>, 277-297
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2009</span>
+                    <div class="pub-body"><strong>Rebennack, S. and J. Kallrath and P. M. Pardalos</strong><br>
+                        <a href="files/ReKaPa2009a.pdf">Column Enumeration based Decomposition Techniques for a Class of Non-convex MINLP Problems</a><br>
+                        <em>Journal of Global Optimization</em> <strong>43</strong>, 277&ndash;297</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2009
-                        <br>
-                        <a href="files/Kallrath2009.pdf">Cutting Circles and Polygons from Area-Minimizing Rectangles</a>
-                        <br>
-                        <i>Journal of Global Optimization</i> <strong>43</strong>, 299-328
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2009</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/Kallrath2009.pdf">Cutting Circles and Polygons from Area-Minimizing Rectangles</a><br>
+                        <em>Journal of Global Optimization</em> <strong>43</strong>, 299&ndash;328</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2008d
-                        <br>
-                        <a href="files/kallrath2008d.pdf"> Planning in the Process Industry</a>
-                        <br> in: C. A. Floudas and P. M. Pardalos (Eds.)
-                        <br>
-                        <i>Encyclopedia of Optimization</i>, pp. 2970-2979, 2nd Edition, Springer, New York
-                        <br>
-                        <a href="http://www.springer.com/mathematics/book/978-0-387-74759-0" target="_blank">Available at Springer</a>
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2008</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/kallrath2008d.pdf">Planning in the Process Industry</a><br>
+                        in: C. A. Floudas and P. M. Pardalos (Eds.)<br>
+                        <em>Encyclopedia of Optimization</em>, pp. 2970&ndash;2979, 2nd Edition, Springer, New York<br>
+                        <a href="http://www.springer.com/mathematics/book/978-0-387-74759-0" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2008c
-                        <br>
-                        <a href="files/kallrath2008c.pdf"> Modeling Difficult Optimization Problems</a>
-                        <br> in: C. A. Floudas and P. M. Pardalos (Eds.)
-                        <br>
-                        <i>Encyclopedia of Optimization</i>, pp. 2284-2297, 2nd Edition, Springer, New York
-                        <br>
-                        <a href="http://www.springer.com/mathematics/book/978-0-387-74759-0" target="_blank">Available at Springer</a>
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2008</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/kallrath2008c.pdf">Modeling Difficult Optimization Problems</a><br>
+                        in: C. A. Floudas and P. M. Pardalos (Eds.)<br>
+                        <em>Encyclopedia of Optimization</em>, pp. 2284&ndash;2297, 2nd Edition, Springer, New York<br>
+                        <a href="http://www.springer.com/mathematics/book/978-0-387-74759-0" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2008b
-                        <br>
-                        <a href="files/kallrath2008b.pdf"> Complexity and Large Scale-Least Squares Problems</a>
-                        <br> in: C. A. Floudas and P. M. Pardalos (Eds.)
-                        <br>
-                        <i>Encyclopedia of Optimization</i>, pp. 435-447, 2nd Edition, Springer, New York
-                        <br>
-                        <a href="http://www.springer.com/mathematics/book/978-0-387-74759-0" target="_blank">Available at Springer</a>
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2008</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/kallrath2008b.pdf">Complexity and Large Scale-Least Squares Problems</a><br>
+                        in: C. A. Floudas and P. M. Pardalos (Eds.)<br>
+                        <em>Encyclopedia of Optimization</em>, pp. 435&ndash;447, 2nd Edition, Springer, New York<br>
+                        <a href="http://www.springer.com/mathematics/book/978-0-387-74759-0" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2008a
-                        <br>
-                        <a href="files/Kallrath2008a.pdf">Pricing Problems in the Chemical Process Industry</a>
-                        <br>
-                        <i>Computational Management Science</i> <strong>5</strong>, 403-405
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2008</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/Kallrath2008a.pdf">Pricing Problems in the Chemical Process Industry</a><br>
+                        <em>Computational Management Science</em> <strong>5</strong>, 403&ndash;405</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2007
-                        <br>
-                        <a href="files/kallrath2007.pdf"> Combining Strategic Design and Operative Planning Problems in the Process Industry</a><strong> [protected by password]</strong>
-                        <br> in: L. G. Papageorgiou and M. C. Georgiadis (Eds.)
-                        <br>
-                        <i>Supply Chain Optimizations - Part I</i>, pp. 219-243, Wiley-VCH, Wiesbaden, Germany
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2007</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/kallrath2007.pdf">Combining Strategic Design and Operative Planning Problems in the Process Industry</a> <span class="badge">password protected</span><br>
+                        in: L. G. Papageorgiou and M. C. Georgiadis (Eds.)<br>
+                        <em>Supply Chain Optimizations &ndash; Part I</em>, pp. 219&ndash;243, Wiley-VCH, Wiesbaden, Germany</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Shaik, M. A., Floudas, C. A., Kallrath, J., and Pitz, H.-J.</strong>: 2007
-                        <br>
-                        <a href="files/mfkp2007.pdf"> Production Scheduling of a Large-Scale Industrial Continuous Plant: Short-Term and Medium-Term Scheduling</a><strong> [protected by password]</strong>
-                        <br> in: V. Plesu and P.S. Agachi (Eds.)
-                        <br>
-                        <i>European Symposium on Computer-Aided Process Engineering (ESCAPE) 17</i>, pp. 1-6, Elsevier, North-Holland, The Netherlands
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2007</span>
+                    <div class="pub-body"><strong>Shaik, M. A., Floudas, C. A., Kallrath, J., and Pitz, H.-J.</strong><br>
+                        <a href="files/mfkp2007.pdf">Production Scheduling of a Large-Scale Industrial Continuous Plant: Short-Term and Medium-Term Scheduling</a> <span class="badge">password protected</span><br>
+                        in: V. Plesu and P.S. Agachi (Eds.)<br>
+                        <em>European Symposium on Computer-Aided Process Engineering (ESCAPE) 17</em>, pp. 1&ndash;6, Elsevier, North-Holland, The Netherlands</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Janak, S. L., Floudas, C. A., Kallrath, J. and Vormbrock, N. </strong>: 2006b
-                        <br>
-                        <a href="files/jfkv2-06.pdf">Production Scheduling of a Large-Scale Industrial Batch Plant: II. Reactive Scheduling</a>
-                        <br>
-                        <i>Industrial and Engineering Chemistry Research</i> <strong>45</strong>, 8253-8269
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2006</span>
+                    <div class="pub-body"><strong>Janak, S. L., Floudas, C. A., Kallrath, J. and Vormbrock, N.</strong><br>
+                        <a href="files/jfkv2-06.pdf">Production Scheduling of a Large-Scale Industrial Batch Plant: II. Reactive Scheduling</a><br>
+                        <em>Industrial and Engineering Chemistry Research</em> <strong>45</strong>, 8253&ndash;8269</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Janak, S. L., Floudas, C. A., Kallrath, J. and Vormbrock, N. </strong>: 2006a
-                        <br>
-                        <a href="files/jfkv1-06.pdf">Production Scheduling of a Large-Scale Industrial Batch Plant: I. Short-Term and Medium-Term Scheduling</a>
-                        <br>
-                        <i>Industrial and Engineering Chemistry Research</i> <strong>45</strong>, 8234-8252
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2006</span>
+                    <div class="pub-body"><strong>Janak, S. L., Floudas, C. A., Kallrath, J. and Vormbrock, N.</strong><br>
+                        <a href="files/jfkv1-06.pdf">Production Scheduling of a Large-Scale Industrial Batch Plant: I. Short-Term and Medium-Term Scheduling</a><br>
+                        <em>Industrial and Engineering Chemistry Research</em> <strong>45</strong>, 8234&ndash;8252</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, J. and Maindl, T. I.</strong>: 2006
-                        <br>
-                        <i>Real Optimization with SAP-APO</i> ,Springer, Heidelberg
-                        <br>
-                        <a href="https://link.springer.com/book/10.1007/3-540-34624-4" target="_blank">Available at Springer</a>
-                    </p>
-                    <a href="https://link.springer.com/book/10.1007/3-540-34624-4" target="_blank"><img src="images/kama2006.jpg" alt="Book" border="0" width="90" /></a>
+                <div class="pub">
+                    <span class="pub-year">2006</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Maindl, T. I.</strong><br>
+                        <em>Real Optimization with SAP-APO</em>, Springer, Heidelberg<br>
+                        <a href="https://link.springer.com/book/10.1007/3-540-34624-4" target="_blank">Available at Springer</a></div>
+                    <div class="pub-thumb"><a href="https://link.springer.com/book/10.1007/3-540-34624-4" target="_blank"><img src="images/kama2006.jpg" alt="Book cover"></a></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Beisiegel, B., Kallrath, J., Kochetov, Y., and Rudnev, A.</strong>: 2006
-                        <br>
-                        <a href="files/bkkr2006.pdf"> Simulated Annealing Based Algorithm for the 2D Bin Packing Problem with Impurities</a>
-                        <br> in: Hans-Dietrich Haasis and Herbert Kopfer and J&ouml;rn Sch&ouml;nberger (Eds.)
-                        <br>
-                        <i>Operations Research Proceedings 2005</i>, pp. 309-314, Springer, Heidelberg, Germany
-                        <br>
-                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-540-32537-6" target="_blank">Available at Springer</a>
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2006</span>
+                    <div class="pub-body"><strong>Beisiegel, B., Kallrath, J., Kochetov, Y., and Rudnev, A.</strong><br>
+                        <a href="files/bkkr2006.pdf">Simulated Annealing Based Algorithm for the 2D Bin Packing Problem with Impurities</a><br>
+                        in: Hans-Dietrich Haasis and Herbert Kopfer and J&ouml;rn Sch&ouml;nberger (Eds.)<br>
+                        <em>Operations Research Proceedings 2005</em>, pp. 309&ndash;314, Springer, Heidelberg, Germany<br>
+                        <a href="http://www.springer.com/business+%26+management/operations+research/book/978-3-540-32537-6" target="_blank">Available at Springer</a></div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath Josef</strong>: 2005
-                        <br>
-                        <a href="files/kallr05a.pdf">Solving Planning and Design Problems in the Process Industry Using Mixed Integer and Global Optimization</a>
-                        <br>
-                        <i>Annals of Operations Research</i> <strong>140</strong>, 339-373
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2005</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/kallr05a.pdf">Solving Planning and Design Problems in the Process Industry Using Mixed Integer and Global Optimization</a><br>
+                        <em>Annals of Operations Research</em> <strong>140</strong>, 339&ndash;373</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Floudas, C. A., Akrotiriankis, I. G., Caratzoulas, S., Meyer, C. A., and Kallrath, J.</strong>: 2005
-                        <br>
-                        <a href="files/facmk05.pdf"> Global Optimization in the 21st Century: Advances and Challenges for Problems with Nonlinear Dynamics</a>
-                        <br>
-                        <i>Computers and Chemical Engineering</i> <strong>29</strong>, 1185-1202
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2005</span>
+                    <div class="pub-body"><strong>Floudas, C. A., Akrotiriankis, I. G., Caratzoulas, S., Meyer, C. A., and Kallrath, J.</strong><br>
+                        <a href="files/facmk05.pdf">Global Optimization in the 21st Century: Advances and Challenges for Problems with Nonlinear Dynamics</a><br>
+                        <em>Computers and Chemical Engineering</em> <strong>29</strong>, 1185&ndash;1202</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Lin X., Floudas C. A., and Kallrath J.</strong>: 2005
-                        <br>
-                        <a href="files/lfk2005.pdf">Global Solution Approach for a Nonconvex MINLP Problem in Product Portfolio Optimization,</a>
-                        <br>
-                        <i>Journal of Global Optimization</i> <strong>32</strong>, 417-431
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2005</span>
+                    <div class="pub-body"><strong>Lin X., Floudas C. A., and Kallrath J.</strong><br>
+                        <a href="files/lfk2005.pdf">Global Solution Approach for a Nonconvex MINLP Problem in Product Portfolio Optimization</a><br>
+                        <em>Journal of Global Optimization</em> <strong>32</strong>, 417&ndash;431</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Floudas, C. A., Akrotiriankis, I. G., Caratzoulas, S., Meyer, C. A., and Kallrath, J.</strong>: 2004
-                        <br>
-                        <a href="files/escape04.pdf"> Global Optimization in the 21st Century: Advances and Challenges for Problems with Nonlinear Dynamics</a>
-                        <br> in: A. Barbossa-Povoa and A. Motos (Eds.)
-                        <br>
-                        <i>European Symposium on Computer-Aided Process Engineering (ESCAPE) 14</i>, pp. 23-51, Elsevier, North-Holland, The Netherlands
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2004</span>
+                    <div class="pub-body"><strong>Floudas, C. A., Akrotiriankis, I. G., Caratzoulas, S., Meyer, C. A., and Kallrath, J.</strong><br>
+                        <a href="files/escape04.pdf">Global Optimization in the 21st Century: Advances and Challenges for Problems with Nonlinear Dynamics</a><br>
+                        in: A. Barbossa-Povoa and A. Motos (Eds.)<br>
+                        <em>European Symposium on Computer-Aided Process Engineering (ESCAPE) 14</em>, pp. 23&ndash;51, Elsevier, North-Holland, The Netherlands</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2004
-                        <br>
-                        <a href="files/jk-sant.pdf"> Exact Computation of Global Minima of a Nonconvex Portfolio Optimization Problem</a>
-                        <br> in: C.A. Floudas and P.M. Pardalos (Eds.)
-                        <br>
-                        <i>Frontiers In Global Optimization</i>, pp. 237-254, Kluwer, Dordrecht, The Netherlands
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2004</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/jk-sant.pdf">Exact Computation of Global Minima of a Nonconvex Portfolio Optimization Problem</a><br>
+                        in: C.A. Floudas and P.M. Pardalos (Eds.)<br>
+                        <em>Frontiers In Global Optimization</em>, pp. 237&ndash;254, Kluwer, Dordrecht, The Netherlands</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2004
-                        <br>
-                        <a href="files/modlang.zip"><i>Modeling Languages in Mathematical Optimization</i></a>, Kluwer, Dordrecht, The Netherlands
-                        <br>
-                    </p>
-                    <img src="images/kluwer.jpg" alt="Book" border="0" width="90" />
+                <div class="pub">
+                    <span class="pub-year">2004</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/modlang.zip"><em>Modeling Languages in Mathematical Optimization</em></a>, Kluwer, Dordrecht, The Netherlands</div>
+                    <div class="pub-thumb"><img src="images/kluwer.jpg" alt="Book cover"></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2002
-                        <br>
-                        <a href="files/ors2002b.pdf">Combined Strategic and Operational Planning - An MILP Success Story in Chemical Industry</a>
-                        <br>
-                        <i>OR Spectrum</i> <strong>24(3)</strong>, 315-341
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2002</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/ors2002b.pdf">Combined Strategic and Operational Planning &ndash; An MILP Success Story in Chemical Industry</a><br>
+                        <em>OR Spectrum</em> <strong>24(3)</strong>, 315&ndash;341</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2002
-                        <br>
-                        <a href="files/                  .jpg"><i>Gemischt-Ganzzahlige Optimierung: Modellierung in der Praxis</i></a>, Vieweg, Wiesbaden
-                    </p>
-                    <img src="images/vieweg.jpg" alt="Book" border="0" width="90" />
+                <div class="pub">
+                    <span class="pub-year">2002</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <em>Gemischt-Ganzzahlige Optimierung: Modellierung in der Praxis</em>, Vieweg, Wiesbaden</div>
+                    <div class="pub-thumb"><img src="images/vieweg.jpg" alt="Book cover"></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2002
-                        <br>
-                        <a href="files/ors2002a.pdf">Planning and Scheduling in the Process Industry</a>
-                        <br>
-                        <i>OR Spectrum</i> <strong>24(3)</strong>, 219-250
-                        <br>
-                        <strong>(REVIEW ARTICLE)</strong>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2002</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/ors2002a.pdf">Planning and Scheduling in the Process Industry</a> <span class="badge">review article</span><br>
+                        <em>OR Spectrum</em> <strong>24(3)</strong>, 219&ndash;250</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 2000
-                        <br>
-                        <a href="files/kall00c.pdf">Mixed Integer Optimization in the Chemical Process Industry: Experience, Potential and Future Perspectives</a>
-                        <br>
-                        <i>Chemical Engineering Research and Design</i> <strong>78(6)</strong>, 809-822
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2000</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/kall00c.pdf">Mixed Integer Optimization in the Chemical Process Industry: Experience, Potential and Future Perspectives</a><br>
+                        <em>Chemical Engineering Research and Design</em> <strong>78(6)</strong>, 809&ndash;822</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Timpe, C. and Kallrath, Josef</strong>: 2000
-                        <br>
-                        <a href="files/tk-2000.pdf">Optimal Planning in Large Multi-Site Production Networks</a>
-                        <br>
-                        <i>Journal of European Operational Research</i> <strong>126(2)</strong>, 422-435
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">2000</span>
+                    <div class="pub-body"><strong>Timpe, C. and Kallrath, Josef</strong><br>
+                        <a href="files/tk-2000.pdf">Optimal Planning in Large Multi-Site Production Networks</a><br>
+                        <em>Journal of European Operational Research</em> <strong>126(2)</strong>, 422&ndash;435</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 1999
-                        <br>
-                        <a href="files/jk-1999a.pdf"> Mixed Integer Nonlinear Programming Applications</a>
-                        <br> in: Ciriani, T. A., Gliozzi, S., Johnson, E. L. and Tadei, R. (Eds.)
-                        <br>
-                        <i>Operational Research in Industry</i>, pp 42-76, Macmillan, Houndsmill, Basingstoke
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1999</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/jk-1999a.pdf">Mixed Integer Nonlinear Programming Applications</a><br>
+                        in: Ciriani, T. A., Gliozzi, S., Johnson, E. L. and Tadei, R. (Eds.)<br>
+                        <em>Operational Research in Industry</em>, pp 42&ndash;76, Macmillan, Houndsmill, Basingstoke</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, J.</strong>: 1999
-                        <br>
-                        <a href="files/jk-airo.pdf">Nonlinear Optimization: Models, Algorithms, Tools and Support</a>
-                        <br>
-                        <i>AIRO News</i> <strong>IV(n.2)</strong>, 5-10
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1999</span>
+                    <div class="pub-body"><strong>Kallrath, J.</strong><br>
+                        <a href="files/jk-airo.pdf">Nonlinear Optimization: Models, Algorithms, Tools and Support</a><br>
+                        <em>AIRO News</em> <strong>IV(n.2)</strong>, 5&ndash;10</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 1999
-                        <br>
-                        <a href="files/kall99c.pdf">The Concept of Contiguity in Models Based on Time-Indexed Formulations</a>
-                        <br> in: F. Keil, F., Mackens, W., Voss, H. and Werther, J.
-                        <br>
-                        <i>Scientific Computing in Chemical Engineering II</i>, pp 330-337, Springer, Berlin
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1999</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/kall99c.pdf">The Concept of Contiguity in Models Based on Time-Indexed Formulations</a><br>
+                        in: F. Keil, F., Mackens, W., Voss, H. and Werther, J.<br>
+                        <em>Scientific Computing in Chemical Engineering II</em>, pp 330&ndash;337, Springer, Berlin</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong>Kallrath, J. and Wilson, J. M.</strong>: 1997
-                        <br>
-                        <a href="files/milpbook.pdf"><i>Business Optimisation Using Mathematical Programming</i></a>, Macmillan, UK
-                        <br>
-                    </p>
-                    <img src="images/milpbook.jpg" alt="Book" border="0" width="90" />
+                <div class="pub">
+                    <span class="pub-year">1997</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Wilson, J. M.</strong><br>
+                        <a href="files/milpbook.pdf"><em>Business Optimisation Using Mathematical Programming</em></a>, Macmillan, UK</div>
+                    <div class="pub-thumb"><img src="images/milpbook.jpg" alt="Book cover"></div>
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 1995
-                        <br>
-                        <a href="files/orbuch94.pdf"> <i>Diskrete Optimierung in der Chemischen Industrie</i></a>
-                        <br> in: Bachem, A., J&uuml;nger, M. and Schrader, R. (Eds.)
-                        <br>
-                        <i>Mathematik in der Praxis - Fallstudien aus Industrie, Wirtschaft, Naturwissenschaften und Medizin</i>, pp. 173-195, Springer, Berlin-Heidelberg
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1995</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/orbuch94.pdf">Diskrete Optimierung in der Chemischen Industrie</a><br>
+                        in: Bachem, A., J&uuml;nger, M. and Schrader, R. (Eds.)<br>
+                        <em>Mathematik in der Praxis &ndash; Fallstudien aus Industrie, Wirtschaft, Naturwissenschaften und Medizin</em>, pp. 173&ndash;195, Springer, Berlin-Heidelberg</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, J. and Schreieck, A.</strong>: 1995
-                        <br>
-                        <a href="files/eitc95.pdf"> Discrete Optimization and Real World Problems</a>
-                        <br> in: Hertzberger, B. and Serazzi, G. (Eds.)
-                        <br>
-                        <i>High-Performance Computing and Networking</i>, No. 919 in Lecture Notes in Computer Science, pp 351-359, Springer, Berlin
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1995</span>
+                    <div class="pub-body"><strong>Kallrath, J. and Schreieck, A.</strong><br>
+                        <a href="files/eitc95.pdf">Discrete Optimization and Real World Problems</a><br>
+                        in: Hertzberger, B. and Serazzi, G. (Eds.)<br>
+                        <em>High-Performance Computing and Networking</em>, No. 919 in Lecture Notes in Computer Science, pp 351&ndash;359, Springer, Berlin</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Heipcke, S., Kallrath, J., B&uuml;cker, M. and Brode, S.</strong>: 1994
-                        <br>
-                        <a href="files/ki-94.pdf"> <i>Optimales Scheduling mit Hilfe von Constraint-Netzen</i></a>
-                        <br> in: Barth, G., G&uuml;nter, A. and Neumann, B. (Eds.)
-                        <br>
-                        <i>KI-94 Anwendungen der k&uuml;nstlichen Intelligenz</i>, pp. 37-52, Springer, Berlin-Heidelberg
-                        <br>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1994</span>
+                    <div class="pub-body"><strong>Heipcke, S., Kallrath, J., B&uuml;cker, M. and Brode, S.</strong><br>
+                        <a href="files/ki-94.pdf">Optimales Scheduling mit Hilfe von Constraint-Netzen</a><br>
+                        in: Barth, G., G&uuml;nter, A. and Neumann, B. (Eds.)<br>
+                        <em>KI-94 Anwendungen der k&uuml;nstlichen Intelligenz</em>, pp. 37&ndash;52, Springer, Berlin-Heidelberg</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, Josef</strong>: 1994
-                        <br>
-                        <a href="files/tat94.pdf"> Diskrete Optimierung in der chemischen Produktion</a>
-                        <br> in: Flieger, R. and Grebe, R. (Eds.)
-                        <br>
-                        <i>Parallele Datenverarbeitung mit dem Transputer</i>, pp 378-395, IOS Press, Amsterdam
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1994</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        <a href="files/tat94.pdf">Diskrete Optimierung in der chemischen Produktion</a><br>
+                        in: Flieger, R. and Grebe, R. (Eds.)<br>
+                        <em>Parallele Datenverarbeitung mit dem Transputer</em>, pp 378&ndash;395, IOS Press, Amsterdam</div>
+                    
                 </div>
-
-                <div class="publication">
-                    <p>
-                        <strong> Kallrath, J.</strong>: 1993
-                        <br> Gradient-free Optimization
-                        <br> in: Milone, E. F. (Editor)
-                        <br>
-                        <i>Modeling Eclipsing Binaries</i>, pp. 39-51, Springer, New York
-                        <br>
-                        <strong>(REVIEW ARTICLE)</strong>
-                    </p>
+                <div class="pub">
+                    <span class="pub-year">1993</span>
+                    <div class="pub-body"><strong>Kallrath, Josef</strong><br>
+                        Gradient-free Optimization <span class="badge">review article</span><br>
+                        in: Milone, E. F. (Editor)<br>
+                        <em>Modeling Eclipsing Binaries</em>, pp. 39&ndash;51, Springer, New York</div>
+                    
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Copyright &copy; 2005 - 2025 Josef Kallrath</p>
         </div>
-    </footer>
+    </main>
+    <footer><div class="container"><p>Copyright &copy; 2005&ndash;2026 Josef Kallrath</p></div></footer>
 </body>
-
 </html>

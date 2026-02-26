@@ -3,125 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Steffen Rebennack">
+    <meta name="author" content="Josef Kallrath">
     <meta name="responsible" content="Josef Kallrath">
-    <meta name="description" content="Josef Kallrath's CV">
-    <meta name="keywords" content="CV, Curriculum Vitae, mathematical business optimization, production planning, supply chain management, network design, mixed integer optimization, safety analysis, portfolio optimization, refinery planning, process industry, blending problems, linear programming, recursion, global optimization, eclipsing binaries, WD2005">
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
     <title>Josef Kallrath | Mathematics</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Jost',sans-serif;font-weight:300;background:#F8F8F6;color:#1A1A1A;line-height:1.75;-webkit-font-smoothing:antialiased}
+        .container{width:88%;max-width:1080px;margin:0 auto}
+        header{background:#1C3557;padding:0}
+        .header-inner{display:flex;align-items:center;gap:0}
+        header .logo{width:90px;height:90px;border-radius:50%;border:2px solid rgba(255,255,255,.22);cursor:pointer;transition:border-color .25s;display:block;flex-shrink:0;margin:12px 28px 12px 0}
+        header .logo:hover{border-color:rgba(255,255,255,.5)}
+        nav{flex:1}
+        nav ul{list-style:none;display:flex;flex-wrap:wrap;align-items:center;height:100%}
+        nav ul li a{display:block;color:rgba(255,255,255,.78);text-decoration:none;font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px 16px;position:relative;transition:color .2s}
+        nav ul li a::after{content:'';position:absolute;bottom:0;left:16px;right:16px;height:2px;background:#A8C4E0;transform:scaleX(0);transition:transform .22s ease}
+        nav ul li a:hover{color:#fff}
+        nav ul li a:hover::after{transform:scaleX(1)}
+        main{padding:64px 0 96px}
+        .page-header{margin-bottom:48px}
+        .page-header h1{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;color:#1C3557;margin-bottom:8px}
+        .page-header .breadcrumb{font-size:12px;color:#999;letter-spacing:.08em;text-transform:uppercase}
+        .card{background:#fff;border:1px solid #E6E6E0;border-radius:3px;padding:40px 44px;margin-bottom:20px}
+        .card h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#1C3557;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid #EBEBE6}
+        .card h3{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#2A4A72;margin:28px 0 10px}
+        .card p{font-size:15px;color:#444;margin-bottom:12px}
+        .card p:last-child{margin-bottom:0}
+        .card ul{list-style:none;padding:0}
+        .card ul li{padding:5px 0 5px 16px;position:relative;font-size:15px;color:#444}
+        .card ul li::before{content:'–';position:absolute;left:0;color:#A8C4E0}
+        .card a{color:#1C3557;text-decoration:none;border-bottom:1px solid #D0D8E8;transition:border-color .2s}
+        .card a:hover{border-bottom-color:#1C3557}
+        .maintenance-box{text-align:center;padding:64px 40px;color:#999}
+        .maintenance-box .icon{font-size:40px;margin-bottom:20px;opacity:.5}
+        .maintenance-box h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;color:#1C3557;margin-bottom:12px}
+        .maintenance-box p{font-size:15px;max-width:400px;margin:0 auto}
+        footer{background:#1C3557;color:rgba(255,255,255,.45);text-align:center;padding:26px 0;font-size:12.5px;letter-spacing:.04em}
+        @media(max-width:640px){.card{padding:28px 24px}.page-header h1{font-size:32px}}
 
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0 10px;
-            text-align: center;
-        }
-
-        header .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .intro {
-            text-align: center;
-        }
-
-        .content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-
-        .content-section {
-            margin-bottom: 20px;
-        }
-
-        .content-section a {
-            text-decoration: none;
-            color: #0066cc;
-        }
-
-        footer {
-            text-align: center;
-            background: #333;
-            color: #fff;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="https://josefkallrath.github.io/homepage">
-                <img src="images/logo.jpg" alt="Logo" class="logo">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="https://josefkallrath.github.io/homepage">Home</a></li>
-                    <li><a href="https://josefkallrath.github.io/cv">CV</a></li>
-                    <li><a href="https://josefkallrath.github.io/astronomy">Astronomy</a></li>
-                    <li><a href="https://josefkallrath.github.io/mathematics">Mathematics</a></li>
-                    <li><a href="https://josefkallrath.github.io/publications">Publications</a></li>
-                    <li><a href="https://josefkallrath.github.io/links">Links</a></li>
-                    <li><a href="https://josefkallrath.github.io/contact">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="container header-inner">
+            <a href="https://josefkallrath.github.io"><img src="images/logo.jpg" alt="Logo" class="logo"></a>
+            <nav><ul>
+                <li><a href="https://josefkallrath.github.io">Home</a></li>
+                <li><a href="https://josefkallrath.github.io/cv">CV</a></li>
+                <li><a href="https://josefkallrath.github.io/astronomy">Astronomy</a></li>
+                <li><a href="https://josefkallrath.github.io/mathematics">Mathematics</a></li>
+                <li><a href="https://josefkallrath.github.io/publications">Publications</a></li>
+                <li><a href="https://josefkallrath.github.io/links">Links</a></li>
+                <li><a href="https://josefkallrath.github.io/contact">Contact</a></li>
+            </ul></nav>
         </div>
     </header>
-
-    <main class="container">
-        <section class="intro">
-            <h2>Mathematics</h2>
-        </section>
-
-        <section class="content">
-            <div class="content-section">
-                <h2>This website is currently under maintenance!</h2>
-            </div>
-    </main>
-
-    <footer>
+    <main>
         <div class="container">
-            <p>Copyright &copy; 2005 - 2025 Josef Kallrath</p>
+            <div class="page-header">
+                <h1>Mathematics</h1>
+                <p class="breadcrumb">Research</p>
+            </div>
+            <div class="card">
+            <div class="maintenance-box">
+                <div class="icon">⚙</div>
+                <h2>Under Maintenance</h2>
+                <p>This section is currently being updated. Please check back soon.</p>
+            </div>
         </div>
-    </footer>
+        </div>
+    </main>
+    <footer><div class="container"><p>Copyright &copy; 2005&ndash;2026 Josef Kallrath</p></div></footer>
 </body>
 </html>

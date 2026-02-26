@@ -1,127 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Steffen Rebennack">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+
+  <HEAD>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <META NAME="Author" CONTENT="Steffen Rebennack">
     <meta name="responsible" content="Josef Kallrath">
-    <meta name="description" content="Josef Kallrath's CV">
-    <meta name="keywords" content="CV, Curriculum Vitae, mathematical business optimization, production planning, supply chain management, network design, mixed integer optimization, safety analysis, portfolio optimization, refinery planning, process industry, blending problems, linear programming, recursion, global optimization, eclipsing binaries, WD2005">
-    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+    <meta name="description" content="Josef Kallrath's WD2007">
+    <meta name="keywords" content="WD2007, mathematical business optimization,
+            production planning, supply chain management
+            network design, mixed integer optimization,
+            safety analysis, portfolio optimization,
+            refinery planning, process industry, 
+            blending problems, linear programming,
+            recursion, global optimization,
+            eclipsing binaries, WD2005">
+    <meta name="security" content="">
+    <meta name="include" content="">
+    <meta name="footer" content="">
+    <!--default Anfang end (convhtml)-->
+    <!--Kopf begin (convhtml)-->
     <title>Josef Kallrath | WD2007</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+  </HEAD>
 
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-        }
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0 10px;
-            text-align: center;
-        }
+  <body style="background-color: rgb(51, 51, 51);" >
+  <center> 
+<!-- Kopf der Seite -->
+  <table border="0" cellpadding="0" cellSpacing="0" width=900 >
+    <tr><td bgcolor="#330033" width="50"></td><td bgcolor="#330033" align="center" width="800" ><font color="#FFFFFF"><FONT SIZE="+3" ><b>WD2007</b></FONT></FONT></td><td align="right"><a href="https://josefkallrath.github.io"><img src="images/logo.jpg" alt="Logo" width="90" height="90"></a></td></tr>
+  </table>
+  <table border="0" cellpadding="0" cellSpacing="0" width=900 >
+    <tr>
+      <td width="150" bgcolor="#777777" valign="top" >
+<!-- Navigationsleiste -->  
+        <table bgcolor="#777777" border="0" cellpadding="0" cellSpacing="0" width="100%" >   
+         <tr><td bgcolor="000000" align="center"><a href="https://josefkallrath.github.io"><img src="images/kallrath-pic2.jpg" alt="Prof. Dr. Kallrath" border="0" width="150"></a></td></tr>
+         <tr><td height="45" align="center" valign="middle"><a href="https://josefkallrath.github.io">Home</a></td></tr>
+         <tr><td height="45" align="center" valign="middle"><a href="https://josefkallrath.github.io/cv">CV</a></td></tr>
+         <tr><td height="45" align="center" valign="middle"><a href="https://josefkallrath.github.io/astronomy">Astronomy</a></td></tr>
+         <tr><td height="45" align="center" valign="middle"><a href="https://josefkallrath.github.io/wd2006">WD2006</a></td></tr>
+         <tr><td height="45" align="center" valign="middle"><a href="https://josefkallrath.github.io/mathematics">Mathematics</a></td></tr>
+         <tr><td height="45" align="center" valign="middle"><a href="https://josefkallrath.github.io/publications">Publications</a></td></tr>
+         <tr><td height="45" align="center" valign="middle"><a href="https://josefkallrath.github.io/links">Links</td></tr>
+         <tr><td height="45" align="center" valign="middle"><a href="https://josefkallrath.github.io/contact">Contact</a></td></tr>
+         <tr><td></td></tr>      
+        </table>
+      </td>
+<!-- Haupt-text -->       
+      <td width="750">
+         <table bgcolor="#999999" cellpadding="10" width="100%" align="left" border="0" >
+         <tr><td align=left valign=top height="550">
+         <BR>
+         <H2><b>The Eclipsing Binary Program WD2006</b></H2>
+         <P><FONT SIZE="+1">The Eclipsing Binary Program <b>WD2006</b> has been 
+developed by Josef Kallrath, and, in those parts related to the
+stellar atmospheres, by Eugene F. Milone; <b>WD2007</b> had little changes. There has been little progress after 2007, and
+WD2006 (for which I still get some requests from time to time) is definitely not synchronized with the latest version
+of the Wilson-Devinney code. Still I am happy to deliver it on request, and maybe, there will be a new version in 2020. </FONT>
 
-        header .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
+<P><FONT SIZE="+1">The program runs under the
+operating system LINUX as well as in a DOS Window/DOS command shell under
+Win95, Win98, WinNT, Win2000 and WinXP. It should also run under other UNIX
+operating systems and CygWin; however, this has not been thoroughly
+tested. 
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
+<P><FONT SIZE="+1">WD2006 is a Fortran-based wrapper around the <A href="ftp://ftp.astro.ufl.edu/pub/wilson/">Wilson-Devinney
+program WD (=LC+DC)</A> developed and distributed by Robert E. Wilson (University of Florida)</i>
+to compute eclipsing binary light curves. The term <i>light curves</i> is here used in the general sense of
+eclipsing binary observables; see, Kallrath & Milone (1999) among other
+observables, and to analyze data, i.e., to fit light curves or
+merely to compute a synthetic light curve. WD2006 has tight link with the original 
+WD code, and it calls the WD subroutine DC and other subroutines called subsequently. Therefore, it is compatible regarding the astrophysics. The package itself is still maintained and further
+developed solely by Josef Kallrath. The documentation has been improved
+significantly and, from 2005 on, is maintained by J. Kallrath and E. F.
+Milone.</FONT>
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
+<P><FONT SIZE="+1">It should be understood that modeling eclipsing binaries and solving inverse
+problems in such a context is a major research effort and requires some
+expertise to use the software effectively. Wherever possible, great effort
+has been invested to make the software as stable as possible.</FONT>
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-        }
+<P><FONT SIZE="+1">WD2006 has been developed within the framework of a several
+preceding software packages named LCCTRL, WD93, WD95, WD98, and WD2002. WD2002 was the first
+release that combined all previous developments and included all stellar
+atmospheres improvements added by E. F. Milone and C. R. Stagg, and was also
+the first release which ran under LINUX and other UNIX operation systems.</FONT>
 
-        .intro {
-            text-align: center;
-        }
+<P><FONT SIZE="+1">WD2006 adds simulated annealing as a minimization algorithm, and
+produces tables of absolute dimensions, and, in particular, LaTeX output
+tables. It also supports and embeds a Fortran subroutine for the computation
+of limb-darkening coefficients as provided by Walter Van Hamme.</FONT>
 
-        .content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
+<P><FONT SIZE="+1">The procedure for creating the flux files is described in the appendix along
+with changes to the atmospheres option in WD programs. The use of
+the flux ratio files that make use of Kurucz atmospheres models are coded in 
+<i>Subroutine ATM2000</i> (which replaces subroutine ATM) by C. R. Stagg.</FONT>
 
-        .content-section {
-            margin-bottom: 20px;
-        }
+<P><FONT SIZE="+1">We provide the LaTeX source file, docu.tex, in the WD2006/DOCUMENT directory to encourage the new user to add appropriate
+comments, corrections or extension directly into this file. That way, we can
+eliminate problems in a short time. We also appreciate feedback in case you
+experienced difficulties.</FONT> 
 
-        .content-section a {
-            text-decoration: none;
-            color: #0066cc;
-        }
+<P><FONT SIZE="+1">A final remark: Currently, there are at least three programs available based on the Wilson-Devinney approach and program. At first, and always the most up-to-date in terms of the astrophysics, is the original WD program with a lot of functionality 
+added over the years; Bob Wilson is actively developing and maintaining this program. Most analyses of eclipsing binary stars are performed with this program. Second, the WDxxxx program described on this web page. This program runs fully under both Linux and Microsoft Windows operating systems, and there is a about a dozen of papers in which this program has been used for eclipsing binary analyses. Third, the GUI wrapper <A href="http://www.eclipsingbinaries.org/">PHOEBE</A> developed by Andrej Prsa. This program is handy and nice to use and has an active user group (it is not clear whether the GUI works with Microsoft operating systems). The final conclusion is: it depends on one's needs and working style preferences which program to chose. </FONT> 
 
-        footer {
-            text-align: center;
-            background: #333;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <a href="https://josefkallrath.github.io/homepage">
-                <img src="images/logo.jpg" alt="Logo" class="logo">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="https://josefkallrath.github.io/homepage">Home</a></li>
-                    <li><a href="https://josefkallrath.github.io/cv">CV</a></li>
-                    <li><a href="https://josefkallrath.github.io/astronomy">Astronomy</a></li>
-                    <li><a href="https://josefkallrath.github.io/mathematics">Mathematics</a></li>
-                    <li><a href="https://josefkallrath.github.io/publications">Publications</a></li>
-                    <li><a href="https://josefkallrath.github.io/links">Links</a></li>
-                    <li><a href="https://josefkallrath.github.io/contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<P><FONT SIZE="+1"><b>WD2006</b> can be downloaded as the password-proteced 
+file <A href="files/wd2006.zip">wd2006.zip</A> [left mouse click]. The zip file contains the executable for Microsoft Windows, documentation, test examples, but
+not the source code.</FONT>
 
-    <main class="container">
-        <section class="intro">
-            <h2>WD2007</h2>
-        </section>
+<P><FONT SIZE="+1">Please contact the author and ask for the password to unzip
+the zip-file.</FONT>
+<BR>
+<BR>
+         </td></tr>
+         </table> 
 
-        <section class="content">
-            <div class="content-section">
-                <h2>This website is currently under maintenance!</h2>
-            </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Copyright &copy; 2005 - 2025 Josef Kallrath</p>
-        </div>
-    </footer>
-</body>
+       </td>
+    </tr>
+<!-- Fuss-zeile --> 
+    <tr><td colspan="2" align="center"><HR><P><I>Copyright &copy; 2005-2026, Josef Kallrath, Jun 26, 2019</I></P></td></tr> 
+   </table>
+    
+  </center>  
+  </body>
 </html>
+

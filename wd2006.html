@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Josef Kallrath">
     <meta name="responsible" content="Josef Kallrath">
-    <meta name="description" content="Josef Kallrath's WD2007 – Eclipsing Binary Program">
-    <meta name="keywords" content="WD2007, WD2006, eclipsing binaries, Wilson-Devinney, binary stars">
+    <meta name="description" content="Josef Kallrath's WD2006 – Eclipsing Binary Program">
+    <meta name="keywords" content="WD2006, eclipsing binaries, Wilson-Devinney, eb-model, binary stars">
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
     <title>Josef Kallrath | WD2006</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
         header .logo{width:90px;height:90px;border-radius:50%;border:2px solid rgba(255,255,255,.22);cursor:pointer;transition:border-color .25s;display:block;flex-shrink:0;margin:12px 28px 12px 0}
         header .logo:hover{border-color:rgba(255,255,255,.5)}
         nav{flex:1}
-        nav ul{list-style:none;display:flex;flex-wrap:wrap;align-items:center;height:100%}
+        nav ul{list-style:none;display:flex;flex-wrap:wrap;align-items:center}
         nav ul li a{display:block;color:rgba(255,255,255,.78);text-decoration:none;font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px 16px;position:relative;transition:color .2s}
         nav ul li a::after{content:'';position:absolute;bottom:0;left:16px;right:16px;height:2px;background:#A8C4E0;transform:scaleX(0);transition:transform .22s ease}
         nav ul li a:hover{color:#fff}
@@ -39,7 +39,6 @@
         .download-box .dl-icon{font-size:32px;flex-shrink:0;opacity:.6}
         .download-box .dl-text{font-size:14.5px;color:#333;line-height:1.65}
         .download-box .dl-text strong{color:#1C3557;font-weight:500;display:block;margin-bottom:4px;font-size:15.5px}
-        .note-box{background:#FFFBF0;border:1px solid #EDE0B0;border-radius:3px;padding:16px 24px;margin-bottom:20px;font-size:14px;color:#5A4800}
         footer{background:#1C3557;color:rgba(255,255,255,.45);text-align:center;padding:26px 0;font-size:12.5px;letter-spacing:.04em}
         @media(max-width:640px){.card{padding:28px 24px}.download-box{flex-direction:column;gap:12px}}
     </style>
@@ -69,11 +68,11 @@
             <div class="card">
                 <h2>The Eclipsing Binary Program WD2006</h2>
 
-                <p><strong>WD2006</strong> has been developed by Josef Kallrath, and, in those parts related to stellar atmospheres, by Eugene F. Milone; <strong>WD2007</strong> introduced only minor changes over WD2006. There has been little progress after 2007, and WD2006 is not synchronized with the latest version of the Wilson-Devinney code. It is still available on request.</p>
+                <p><strong>WD2006</strong> has been developed by Josef Kallrath, and, in those parts related to stellar atmospheres, by Eugene F. Milone. There has been little progress after 2006, and WD2006 is not synchronized with the latest version of the Wilson-Devinney code. It is still available on request.</p>
 
                 <p>The program runs under Linux as well as in a DOS window or DOS command shell under Win95, Win98, WinNT, Win2000, and WinXP. It should also run under other UNIX operating systems and CygWin, though this has not been thoroughly tested.</p>
 
-                <p>WD2006 is a Fortran-based wrapper around the <a href="ftp://ftp.astro.ufl.edu/pub/wilson/" target="_blank">Wilson-Devinney program WD (LC+DC)</a> developed and distributed by Robert E. Wilson (University of Florida) to compute eclipsing binary light curves. The term <em>light curves</em> is used here in the general sense of eclipsing binary observables; see Kallrath &amp; Milone (1999) for details. The package is maintained solely by Josef Kallrath. The documentation has been substantially improved and, from 2005 on, is maintained by J. Kallrath and E. F. Milone.</p>
+                <p>WD2006 is a Fortran-based wrapper around the <a href="https://github.com/rewilsonufl/ebmodel" target="_blank">Wilson-Devinney program WD (LC+DC)</a> (available as <em>eb-model</em> on GitHub) developed and distributed by Robert E. Wilson (University of Florida) to compute eclipsing binary light curves. The term <em>light curves</em> is used here in the general sense of eclipsing binary observables; see Kallrath &amp; Milone (1999) for details. The package is maintained solely by Josef Kallrath. The documentation has been substantially improved and, from 2005 on, is maintained by J. Kallrath and E. F. Milone.</p>
 
                 <p>It should be understood that modeling eclipsing binaries and solving inverse problems in this context is a major research effort and requires expertise to use the software effectively. Great effort has been invested to make the software as stable as possible.</p>
 
@@ -91,13 +90,13 @@
 
                 <p>Currently, at least three programs based on the Wilson-Devinney approach are available:</p>
 
-                <p>The <strong>original WD program</strong> by Bob Wilson is the most up-to-date in terms of astrophysics, continuously developed and maintained. Most eclipsing binary analyses are performed with this program.</p>
+                <p><a href="https://github.com/rewilsonufl/ebmodel" target="_blank">The original WD program</a> (available as <em>eb-model</em> on GitHub) by Bob Wilson is the most up-to-date in terms of astrophysics, continuously developed and maintained. Most eclipsing binary analyses are performed with this program.</p>
 
-                <p><strong>WD2006/WD2007</strong> (described on this page) runs fully under both Linux and Microsoft Windows, and has been used in a number of published eclipsing binary analyses.</p>
+                <p><strong>WD2006</strong> (described on this page) runs fully under both Linux and Microsoft Windows, and has been used in a number of published eclipsing binary analyses.</p>
 
-                <p>The GUI wrapper <strong><a href="http://www.eclipsingbinaries.org/" target="_blank">PHOEBE</a></strong> developed by Andrej Pr&scaron;a is user-friendly with an active user group.</p>
+                <p><a href="https://phoebe-project.org/development-team" target="_blank">PHOEBE</a>, developed by Andrej Pr&scaron;a, is a user-friendly GUI wrapper with an active user group.</p>
 
-                <p>Which program to choose depends on one's needs and working style preferences.</p>
+                <p>Which program to choose depends on one&rsquo;s needs and working style preferences.</p>
 
                 <div class="download-box">
                     <span class="dl-icon">&#8595;</span>
